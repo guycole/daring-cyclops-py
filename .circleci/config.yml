@@ -16,7 +16,7 @@ jobs:
       # - image: circleci/postgres:9.4
 
     # working_directory: ~/repo
-    working_directory: ~/repo/daring
+    working_directory: ~/daring-cyclops-py/daring
 
     steps:
       - checkout
