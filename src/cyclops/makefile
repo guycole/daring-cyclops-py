@@ -55,8 +55,7 @@ LATEX = latex
 #
 # Object Files.
 #
-#OBJS = file1.o file2.o file3.o
-OBJS = main.o cyclops.o
+OBJS = cyclops.o main.o player.o
 
 #
 # Finally, some work...
@@ -66,7 +65,16 @@ all: $(CYCLOPS)
 include depend.include
 
 $(CYCLOPS): $(OBJS)
-	$(CC) -o $@ $(OBJS)
+	$(CC) -o $@ $(OBJS) -luuid
+
+cyclops.o: cyclops.cpp
+	$(CC) -c $(CPPFLAGS) $?
+
+main.o: main.cpp
+	$(CC) -c $(CPPFLAGS) $?
+
+player.o: player.cpp
+	$(CC) -c $(CPPFLAGS) $?
 
 #
 #  Update the TAGS file.
@@ -103,5 +111,5 @@ clean:
 #
 .PHONY ultraclean:
 ultraclean:
-	-@rm -f *~ TAGS depend.include
+	-@rm -f *~ TAGS depend.include $(CYCLOPS)
 	-@touch depend.include

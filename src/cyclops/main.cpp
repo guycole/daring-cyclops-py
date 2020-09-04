@@ -13,10 +13,21 @@
 */
 #include "Cyclops.h"
 
+#include <uuid/uuid.h>
 #include <iostream>
 
 int main(int argc, char *argv[]) {
     std::cout << "knock knock 2\n";
 
     Cyclops cyclops;
+
+    uuid_t id;
+    uuid_generate(id);
+
+    char *string = new char[100];
+    uuid_unparse(id, string);
+
+    std::cout << string << std::endl;
+
+    return 0;
 }

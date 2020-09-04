@@ -13,6 +13,8 @@
 */
 #include <iostream>
 
+//enum class Team { red, blue };
+
 class Player {
     private:
         int xx;
