@@ -55,7 +55,7 @@ LATEX = latex
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o player.o
+OBJS = cyclops.o main.o player.o player_manager.o
 
 #
 # Finally, some work...
@@ -67,13 +67,16 @@ include depend.include
 $(CYCLOPS): $(OBJS)
 	$(CC) -o $@ $(OBJS) -luuid
 
-cyclops.o: cyclops.cpp
+cyclops.o: cyclops.cpp cyclops.h
 	$(CC) -c $(CPPFLAGS) $?
 
 main.o: main.cpp
 	$(CC) -c $(CPPFLAGS) $?
 
-player.o: player.cpp
+player.o: player.cpp player.h
+	$(CC) -c $(CPPFLAGS) $?
+
+player_manager.o: player_manager.cpp player_manager.h
 	$(CC) -c $(CPPFLAGS) $?
 
 #

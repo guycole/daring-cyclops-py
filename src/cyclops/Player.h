@@ -2,7 +2,7 @@
 ** Title:Player.h
 **
 ** Description:
-**   player
+**  Player record
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,13 +11,21 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include <iostream>
+#include <uuid/uuid.h>
 
-//enum class Team { red, blue };
+#ifndef PLAYER_H_
+#define PLAYER_H_
+
+//enum class Team { red, blue, green };
 
 class Player {
     private:
-        int xx;
+        uuid_t user_id;
+        char *user_name;
+        int score;
+//        Team team;
     public:
         Player();
 };
+
+#endif

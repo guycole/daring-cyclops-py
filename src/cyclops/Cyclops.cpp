@@ -1,5 +1,5 @@
 /*
-** Title:Cyclops.cpp
+** Title:cyclops.cpp
 **
 ** Description:
 **   cyclops main
@@ -11,10 +11,21 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include "Cyclops.h"
+#include "cyclops.h"
+#include "player_manager.h"
 
 #include <iostream>
 
 Cyclops::Cyclops() {
+    int xx = 0;
     std::cout << "cyclops\n";
+
+    //player_manager = PlayerManager();
+    //player_manager.add_new_player();
+}
+
+void Cyclops::add_new_player() {
+    int zz = 5;
+    std::cout << "cyclops add new player\n";
+    player_manager.add_new_player();
 }

@@ -11,15 +11,13 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include "Cyclops.h"
-
 #include <uuid/uuid.h>
 #include <iostream>
 
+#include "cyclops.h"
+
 int main(int argc, char *argv[]) {
     std::cout << "knock knock 2\n";
-
-    Cyclops cyclops;
 
     uuid_t id;
     uuid_generate(id);
@@ -28,6 +26,9 @@ int main(int argc, char *argv[]) {
     uuid_unparse(id, string);
 
     std::cout << string << std::endl;
+
+    Cyclops cyclops;
+    cyclops.add_new_player();
 
     return 0;
 }

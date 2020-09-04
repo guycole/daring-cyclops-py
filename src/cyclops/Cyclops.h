@@ -1,5 +1,5 @@
 /*
-** Title:Cyclops.h
+** Title:cyclops.h
 **
 ** Description:
 **   cyclops driver
@@ -13,9 +13,18 @@
 */
 #include <iostream>
 
+#include "player_manager.h"
+
+#ifndef CYCLOPS_H_
+#define CYCLOPS_H_
+
 class Cyclops {
-    private:
-        int xx;
+    PlayerManager player_manager;
+
     public:
         Cyclops();
+
+        void add_new_player();
 };
+
+#endif
