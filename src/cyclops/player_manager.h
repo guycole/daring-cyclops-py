@@ -11,7 +11,6 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-
 #include "player.h"
 
 #define MAX_PLAYER_PER_SIDE 5
@@ -27,6 +26,7 @@ class PlayerManager {
         PlayerManager();
 
         void add_new_player();
+        void remove_player();
 };
 
 #endif

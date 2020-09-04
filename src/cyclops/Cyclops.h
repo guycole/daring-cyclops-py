@@ -14,12 +14,15 @@
 #include <iostream>
 
 #include "player_manager.h"
+#include "ship_manager.h"
 
 #ifndef CYCLOPS_H_
 #define CYCLOPS_H_
 
 class Cyclops {
+    ShipManager ship_manager;
     PlayerManager player_manager;
+
 
     public:
         Cyclops();

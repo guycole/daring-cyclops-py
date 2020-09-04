@@ -1,5 +1,5 @@
 /*
-** Title:player.cpp
+** Title:ship.cpp
 **
 ** Description:
 **
@@ -11,12 +11,12 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include "player.h"
+#include "ship.h"
 
 #include <iostream>
 
-Player::Player() {
-    std::cout << "player\n";
+Ship::Ship() {
+    std::cout << "ship\n";
 
     active = false;
     score = 0;

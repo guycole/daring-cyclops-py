@@ -38,7 +38,8 @@ ARFLAGS = -r
 CMACS  = -DTRACE=1
 CFLAGS = -g -Wall -I$(INCDIR)
 DEPEND_FLAG = -MM
-CPPFLAGS = -g -Wall -I$(INCDIR) 
+#CPPFLAGS = -g -Wall -Wc++11-extensions -I$(INCDIR)
+CPPFLAGS = -g -Wall -I$(INCDIR)
 
 #
 # Tools.
@@ -55,7 +56,7 @@ LATEX = latex
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o player.o player_manager.o
+OBJS = cyclops.o main.o player.o player_manager.o ship.o ship_manager.o
 
 #
 # Finally, some work...
@@ -77,6 +78,12 @@ player.o: player.cpp player.h
 	$(CC) -c $(CPPFLAGS) $?
 
 player_manager.o: player_manager.cpp player_manager.h
+	$(CC) -c $(CPPFLAGS) $?
+
+ship.o: ship.cpp ship.h
+	$(CC) -c $(CPPFLAGS) $?
+
+ship_manager.o: ship_manager.cpp ship_manager.h
 	$(CC) -c $(CPPFLAGS) $?
 
 #

@@ -1,8 +1,8 @@
 /*
-** Title:player.h
+** Title:ship.h
 **
 ** Description:
-**  Player record
+**  Ship record
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,21 +11,21 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#ifndef PLAYER_H_
-#define PLAYER_H_
+#ifndef SHIP_H_
+#define SHIP_H_
 
-enum class Team { red, blue, green };
+//enum class Team { red, blue, green };
 
-class Player {
+class Ship {
     bool active;
     char *name;
     int score;
     char *ship;
-    Team team;
+//    Team team;
     char *user_id;
 
     public:
-        Player();
+        Ship();
 };
 
 #endif

@@ -1,8 +1,8 @@
 /*
-** Title:player.cpp
+** Title:ship_manager.cpp
 **
 ** Description:
-**
+**   ship management, this is a singleton
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,13 +11,10 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include "player.h"
+#include "ship_manager.h"
 
 #include <iostream>
 
-Player::Player() {
-    std::cout << "player\n";
-
-    active = false;
-    score = 0;
+ShipManager::ShipManager() {
+    std::cout << "ship manager\n";
 }
