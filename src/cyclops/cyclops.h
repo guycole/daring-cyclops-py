@@ -13,6 +13,7 @@
 */
 #include <iostream>
 
+#include "board_manager.h"
 #include "player_manager.h"
 #include "ship_manager.h"
 
@@ -20,14 +21,14 @@
 #define CYCLOPS_H_
 
 class Cyclops {
+    BoardManager board_manager;
     ShipManager ship_manager;
     PlayerManager player_manager;
 
-
     public:
         Cyclops();
-
-        void add_new_player();
+        void run_event_loop();
+        void run_json_command();
 };
 
 #endif

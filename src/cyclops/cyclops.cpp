@@ -24,8 +24,18 @@ Cyclops::Cyclops() {
     //player_manager.add_new_player();
 }
 
+#if 0
 void Cyclops::add_new_player() {
     int zz = 5;
     std::cout << "cyclops add new player\n";
     player_manager.add_new_player();
+}
+#endif
+
+void run_event_loop() {
+    std::cout << "cyclops run_event_loop\n";
+}
+
+void run_json_command() {
+    std::cout << "cyclops run_json_command\n";
 }

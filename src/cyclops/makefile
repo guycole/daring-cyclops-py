@@ -56,7 +56,7 @@ LATEX = latex
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o player.o player_manager.o ship.o ship_manager.o
+OBJS = cyclops.o main.o player.o player_manager.o ship.o ship_manager.o board_cell.o board_manager.o
 
 #
 # Finally, some work...
@@ -72,6 +72,12 @@ cyclops.o: cyclops.cpp cyclops.h
 	$(CC) -c $(CPPFLAGS) $?
 
 main.o: main.cpp
+	$(CC) -c $(CPPFLAGS) $?
+
+game_board.o: board_manager.cpp board_manager.h
+	$(CC) -c $(CPPFLAGS) $?
+
+game_board_cell.o: board_cell.cpp board_cell.h
 	$(CC) -c $(CPPFLAGS) $?
 
 player.o: player.cpp player.h

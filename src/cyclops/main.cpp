@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
     std::cout << string << std::endl;
 
     Cyclops cyclops;
-    cyclops.add_new_player();
+//    cyclops.add_new_player();
 
     return 0;
 }
