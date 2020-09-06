@@ -11,18 +11,39 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <string>
+
+#include "player.h"
+
 #ifndef SHIP_H_
 #define SHIP_H_
 
-//enum class Team { red, blue, green };
+enum class ShipType { kScout, kFighter, kMiner, kFlagship };
 
 class Ship {
-    bool active;
+    int warp_engines;
+    int impulse_engines;
+    int photon_torpedo_tubes;
+    int phaser_banks;
+    int deflector_shields;
+    int computer;
+    int life_support;
+    int radio;
+    int tractor_beam;
+
     char *name;
-    int score;
-    char *ship;
-//    Team team;
-    char *user_id;
+
+    static const std::string kBlueScouts[];
+    static const std::string kBlueFighters[];
+    static const std::string kBlueMiners[];
+    static const std::string kBlueFlagships[];
+
+    static const std::string kRedScouts[];
+    static const std::string kRedFighters[];
+    static const std::string kRedMiners[];
+    static const std::string kRedFlagships[];
+
+    void get_ship_name(char *results, PlayerTeam team, ShipType ship_type);
 
     public:
         Ship();

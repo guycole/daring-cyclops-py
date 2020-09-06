@@ -56,7 +56,7 @@ LATEX = latex
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o player.o player_manager.o ship.o ship_manager.o board_cell.o board_manager.o
+OBJS = cyclops.o main.o aws_utility.o player.o player_manager.o ship.o ship_manager.o board_cell.o board_manager.o input_manager.o output_manager.o player_message.o player_message_tell.o player_message_time.o
 
 #
 # Finally, some work...
@@ -74,16 +74,34 @@ cyclops.o: cyclops.cpp cyclops.h
 main.o: main.cpp
 	$(CC) -c $(CPPFLAGS) $?
 
+aws_utility.o: aws_utility.cpp aws_utility.h
+	$(CC) -c $(CPPFLAGS) $?
+
 game_board.o: board_manager.cpp board_manager.h
 	$(CC) -c $(CPPFLAGS) $?
 
 game_board_cell.o: board_cell.cpp board_cell.h
 	$(CC) -c $(CPPFLAGS) $?
 
+input_manager.o: input_manager.cpp input_manager.h
+	$(CC) -c $(CPPFLAGS) $?
+
+output_manager.o: output_manager.cpp output_manager.h
+	$(CC) -c $(CPPFLAGS) $?
+
 player.o: player.cpp player.h
 	$(CC) -c $(CPPFLAGS) $?
 
 player_manager.o: player_manager.cpp player_manager.h
+	$(CC) -c $(CPPFLAGS) $?
+
+player_message.o: player_message.cpp player_message.h
+	$(CC) -c $(CPPFLAGS) $?
+
+player_message_tell.o: player_message_tell.cpp player_message_tell.h
+	$(CC) -c $(CPPFLAGS) $?
+
+player_message_time.o: player_message_time.cpp player_message_time.h
 	$(CC) -c $(CPPFLAGS) $?
 
 ship.o: ship.cpp ship.h

@@ -1,8 +1,8 @@
 /*
-** Title:board_cell.h
+** Title:output_manager.h
 **
 ** Description:
-**   board cell
+**
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -12,15 +12,13 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 
-#ifndef BOARD_CELL_H_
-#define BOARD_CELL_H_
+#ifndef OUTPUT_MANAGER_H_
+#define OUTPUT_MANAGER_H_
 
-class BoardCell {
-
-    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
+class OutputManager {
 
     public:
-        BoardCell();
+        OutputManager();
 };
 
 #endif

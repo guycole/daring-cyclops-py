@@ -18,10 +18,14 @@ RUN apt-get install -y less
 RUN apt-get install -y inetutils-tools inetutils-ping inetutils-telnet
 RUN apt-get install -y netcat
 #RUN apt-get install -y net-tools
+RUN apt-get install -y unzip
 RUN apt-get install -y vim
 RUN apt-get install -y wget
 #
+RUN apt-get install -y autoconf automake
 RUN apt-get install -y build-essential
+RUN apt-get install -y libtool
+RUN apt-get install -y pkg-config
 RUN apt-get install -y uuid-dev
 #
 #RUN apt-get install -y libboost-system-dev
@@ -29,7 +33,29 @@ RUN apt-get install -y uuid-dev
 #
 RUN apt-cache pkgnames | sort > pkg.names
 #
-RUN useradd -m -s /bin/bash gsc 
+RUN useradd -m -s /bin/bash gsc
+RUN su - gsc
 COPY bash_aliases /home/gsc/.bash_aliases
+RUN chown gsc:gsc /home/gsc/.bash_aliases
 RUN mkdir /home/gsc/daring-cyclops
+RUN chown gsc:gsc /home/gsc/daring-cyclops
+#
+# protobuff
+WORKDIR /home/gsc
+RUN curl -L https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-cpp-3.13.0.tar.gz -o protobuf-cpp-3.13.0.tar.gz
+RUN su - gsc -c "tar -xzf protobuf-cpp-3.13.0.tar.gz"
+RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;./configure"
+RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;make;make check"
+WORKDIR /home/gsc/protobuf-3.13.0
+RUN make install
+RUN ldconfig
+#
+# grpc
+#RUN cd
+#RUN git clone --recurse-submodules -b v1.31.0 https://github.com/grpc/grpc
+#RUN cd grpc;mkdir -p cmake/build
+#RUN cd cmake/build
+#RUN cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR ../..
+#RUN make -j
+#RUN make install
 #

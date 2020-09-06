@@ -14,6 +14,8 @@
 #include <iostream>
 
 #include "board_manager.h"
+#include "input_manager.h"
+#include "output_manager.h"
 #include "player_manager.h"
 #include "ship_manager.h"
 
@@ -21,7 +23,9 @@
 #define CYCLOPS_H_
 
 class Cyclops {
-    BoardManager board_manager;
+ //   BoardManager board_manager;
+    InputManager input_manager;
+    OutputManager output_manager;
     ShipManager ship_manager;
     PlayerManager player_manager;
 

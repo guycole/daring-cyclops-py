@@ -1,0 +1,10 @@
+json input sqs
+
+output, up to 10 users
+
+dedicated sqs queue?
+
+associate queue when creating user
+
+web rtc?
+

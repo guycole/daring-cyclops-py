@@ -17,4 +17,9 @@
 
 BoardManager::BoardManager() {
     std::cout << "board manager\n";
+    original_board();
+}
+
+void BoardManager::original_board() {
+    std::cout << "original board\n";
 }

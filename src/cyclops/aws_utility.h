@@ -1,8 +1,8 @@
 /*
-** Title:board_cell.h
+** Title:aws_utility.h
 **
 ** Description:
-**   board cell
+**
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -12,15 +12,17 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 
-#ifndef BOARD_CELL_H_
-#define BOARD_CELL_H_
+#ifndef AWS_UTILITY_H_
+#define AWS_UTILITY_H_
 
-class BoardCell {
+class AwsUtility {
 
-    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
+//    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
 
     public:
-        BoardCell();
+        AwsUtility();
+
+        void read_sqs();
 };
 
 #endif

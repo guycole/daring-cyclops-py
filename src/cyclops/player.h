@@ -14,14 +14,15 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
-enum class Team { red, blue, green };
+enum class PlayerRank { kCadet, kLieutenant, kCaptain,  kAdmiral};
+enum class PlayerTeam { kRed, kBlue };
 
 class Player {
     bool active;
     char *name;
     int score;
     char *ship;
-    Team team;
+    PlayerTeam team;
     char *user_id;
 
     public:

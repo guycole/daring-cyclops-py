@@ -15,9 +15,45 @@
 
 #include <iostream>
 
+const std::string Ship::kBlueScouts[] =    {"lazor",  "nike",    "rapier",   "saber",    "vanir"};
+const std::string Ship::kBlueFighters[] =  {"levant", "nimrod",  "ronin",   "scorpion", "viper"};
+const std::string Ship::kBlueMiners[] =    {"lynx",   "napier",  "rigel",   "spartan",  "voyager"};
+const std::string Ship::kBlueFlagships[] = {"lotus",  "nemesis", "reliant", "shogun",   "vega"};
+
+const std::string Ship::kRedScouts[] =    {"dirk",    "griffin",  "hornet", "talon",   "wasp"};
+const std::string Ship::kRedFighters[] =  {"demon",   "gargoyle", "hunter", "triton",  "wolf"};
+const std::string Ship::kRedMiners[] =    {"delphos", "gibbet",   "hansen", "tirade",  "wight"};
+const std::string Ship::kRedFlagships[] = {"dagon",   "gordon",   "hydra",  "tendril", "welink"};
+
 Ship::Ship() {
     std::cout << "ship\n";
+}
 
-    active = false;
-    score = 0;
+void Ship::get_ship_name(char *results, PlayerTeam team, ShipType ship_type) {
+    switch(team) {
+        case PlayerTeam::kBlue:
+            switch(ship_type) {
+                case ShipType::kScout:
+                    break;
+                case ShipType::kFighter:
+                    break;
+                case ShipType::kMiner:
+                    break;
+                case ShipType::kFlagship:
+                    break;
+            }
+            break;
+        case PlayerTeam::kRed:
+            switch(ship_type) {
+                case ShipType::kScout:
+                    break;
+                case ShipType::kFighter:
+                    break;
+                case ShipType::kMiner:
+                    break;
+                case ShipType::kFlagship:
+                    break;
+            }
+            break;
+    }
 }

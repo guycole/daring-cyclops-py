@@ -12,8 +12,8 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 
-#define MAX_BOARD_SIDE_X 5
-#define MAX_BOARD_SIDE_Y 5
+#define MAX_BOARD_SIDE_X 75
+#define MAX_BOARD_SIDE_Y 75
 
 #ifndef BOARD_MANAGER_H_
 #define BOARD_MANAGER_H_
@@ -22,6 +22,8 @@
 
 class BoardManager {
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];
+
+    void original_board();
 
     public:
         BoardManager();

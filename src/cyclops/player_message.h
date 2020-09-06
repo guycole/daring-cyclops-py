@@ -1,8 +1,7 @@
 /*
-** Title:board_cell.h
+** Title:player_message.h
 **
 ** Description:
-**   board cell
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,16 +10,17 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <iostream>
+#include <chrono>
+#include <ctime>
 
-#ifndef BOARD_CELL_H_
-#define BOARD_CELL_H_
+#ifndef PLAYER_MESSAGE_H_
+#define PLAYER_MESSAGE_H_
 
-class BoardCell {
-
-    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
+class PlayerMessage {
 
     public:
-        BoardCell();
+        PlayerMessage();
 };
 
 #endif

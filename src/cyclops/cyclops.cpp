@@ -11,6 +11,7 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include "aws_utility.h"
 #include "cyclops.h"
 #include "player_manager.h"
 
@@ -32,10 +33,15 @@ void Cyclops::add_new_player() {
 }
 #endif
 
-void run_event_loop() {
+void Cyclops::run_event_loop() {
     std::cout << "cyclops run_event_loop\n";
+
+    input_manager.service_input_queue();
+
+//    AwsUtility aws_utility;
+//    aws_utility.read_sqs();
 }
 
-void run_json_command() {
+void Cyclops::run_json_command() {
     std::cout << "cyclops run_json_command\n";
 }
