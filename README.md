@@ -10,3 +10,5 @@ docker run --rm -it -v ~/IdeaProjects/daring-cyclops:/home/gsc/daring-cyclops da
 #
 docker run --rm -it daring-cyclops-dev /bin/bash
 #
+protoc -I=. --cpp_out=/tmp ./demo.proto
+#
