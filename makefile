@@ -28,7 +28,7 @@ LIBDIR = $(DEVDIR)/lib
 #
 # Libraries.
 #
-LIBRARY = $(LIBDIR)/libcyclops.a
+LIBRARY = library/libcyclops.a
 
 #
 # Configurations.

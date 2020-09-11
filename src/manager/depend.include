@@ -1,0 +1,2 @@
+cyclops.o: cyclops.cpp cyclops.h
+main.o: main.cpp cyclops.h

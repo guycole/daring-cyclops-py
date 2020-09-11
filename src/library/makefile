@@ -3,6 +3,7 @@
 #
 # Description:
 #
+#   'make size' returns the quantity of lines in this directory
 #   'make clean' removes all core and object files
 #   'make ultraclean' removes all executables
 #
@@ -17,7 +18,7 @@
 #
 # Directories.
 #
-DEVDIR = $(HOME)/daring-cyclops
+DEVDIR = $(HOME)/daring-cyclops/src/library
 INCDIR = $(DEVDIR)/include
 LIBDIR = $(DEVDIR)/lib
 
@@ -37,7 +38,7 @@ ARFLAGS = -r
 CMACS  = -DTRACE=1
 CFLAGS = -g -Wall -I$(INCDIR)
 DEPEND_FLAG = -MM
-CPPFLAGS = -g -Wall -I$(INCDIR) 
+CPPFLAGS = -g -Wall -I$(INCDIR)
 
 #
 # Tools.
@@ -50,28 +51,28 @@ LATEX = latex
 #
 # Executable Names.
 #
-MANAGER = cyclops_manager
-WORKER = cyclops_worker
+
+#
+# Object Files.
+#
+OBJS = board_cell.o board_manager.o player.o player_manager.o player_message.o player_message_tell.o player_message_time.o ship.o ship_manager.o 
 
 #
 # Finally, some work...
 #
-all: $(LIBRARY) $(WORKER) $(MANAGER)
+all: $(LIBRARY)
 
-#include depend.include
+include depend.include
 
-#$(TEST1): test1.o $(PROJ1LIB) $(PROJ2LIB)
-#	$(CC) -o $@ test1.o $(PROJ1LIB) $(PROJ2LIB)
-
-$(LIBRARY):
-	$(MAKE) -C library $@
+$(LIBRARY): $(OBJS)
+	$(AR) $(ARFLAGS) $@ $(OBJS)
 
 #
 #  Update the TAGS file.
 #
 .PHONY: tags
 tags:
-	-@etags *.cc
+	-@etags *.cpp
 
 #
 #  Determine the size of source files in this subdirectory.
@@ -79,7 +80,7 @@ tags:
 .PHONY: size
 size:
 	-@echo "Size: `pwd`"
-	-@wc -l *.cc makefile
+	-@wc -l *.cpp makefile
 
 #
 #  Generate dependency file
@@ -87,7 +88,7 @@ size:
 .PHONY: depend
 depend:
 	-@rm ./depend.include
-	$(CC) $(DEPEND_FLAG) $(CPPFLAGS) *.cc > ./depend.include
+	$(CC) $(DEPEND_FLAG) $(CPPFLAGS) *.cpp > ./depend.include
 
 #
 #  Cleanup this subdirectory.
@@ -101,6 +102,5 @@ clean:
 #
 .PHONY ultraclean:
 ultraclean:
-	-@rm -f lib/*.a
-	-@rm -f *~ TAGS depend.include $(TEST1)
+	-@rm -f *~ TAGS depend.include $(CYCLOPS)
 	-@touch depend.include

@@ -3,6 +3,7 @@
 #
 # Description:
 #
+#   'make size' returns the quantity of lines in this directory
 #   'make clean' removes all core and object files
 #   'make ultraclean' removes all executables
 #
@@ -17,7 +18,7 @@
 #
 # Directories.
 #
-DEVDIR = $(HOME)/daring-cyclops
+DEVDIR = $(HOME)/daring-cyclops/src/cyclops
 INCDIR = $(DEVDIR)/include
 LIBDIR = $(DEVDIR)/lib
 
@@ -28,7 +29,8 @@ LIBDIR = $(DEVDIR)/lib
 #
 # Libraries.
 #
-LIBRARY = $(LIBDIR)/libcyclops.a
+PROJ1LIB = $(LIBDIR)/libproj1.a
+PROJ2LIB = $(LIBDIR)/libproj2.a
 
 #
 # Configurations.
@@ -50,21 +52,28 @@ LATEX = latex
 #
 # Executable Names.
 #
-MANAGER = cyclops_manager
-WORKER = cyclops_worker
+CYCLOPS = cyclops
+
+#
+# Object Files.
+#
+OBJS = file1.o file2.o file3.o
 
 #
 # Finally, some work...
 #
-all: $(LIBRARY) $(WORKER) $(MANAGER)
+all: $(CYCLOPS)
 
-#include depend.include
+include depend.include
 
-#$(TEST1): test1.o $(PROJ1LIB) $(PROJ2LIB)
-#	$(CC) -o $@ test1.o $(PROJ1LIB) $(PROJ2LIB)
+$(TEST1): test1.o $(PROJ1LIB) $(PROJ2LIB)
+	$(CC) -o $@ test1.o $(PROJ1LIB) $(PROJ2LIB)
 
-$(LIBRARY):
-	$(MAKE) -C library $@
+$(PROJ1LIB):
+	$(MAKE) -C project1 $@
+
+$(PROJ2LIB):
+	$(MAKE) -C project2 $@
 
 #
 #  Update the TAGS file.

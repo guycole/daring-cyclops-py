@@ -1,0 +1,11 @@
+board_cell.o: board_cell.cpp board_cell.h
+board_manager.o: board_manager.cpp board_manager.h board_cell.h
+player.o: player.cpp player.h
+player_manager.o: player_manager.cpp player_manager.h player.h
+player_message.o: player_message.cpp player_message.h
+player_message_tell.o: player_message_tell.cpp player_message_tell.h \
+  player_message.h
+player_message_time.o: player_message_time.cpp player_message_time.h \
+  player_message.h
+ship.o: ship.cpp ship.h player.h
+ship_manager.o: ship_manager.cpp ship_manager.h player.h
