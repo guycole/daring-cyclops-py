@@ -10,6 +10,22 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <iostream>
+
 #include "utility.h"
 
-Utility::Utility() { }
+Utility::Utility() {
+    std::cout << "utility\n";
+}
+
+void Utility::log_debug(const std::string& message) {
+    std::cout << "cyclops debug\n";
+}
+
+void Utility::log_info(const std::string& message) {
+    std::cout << "cyclops info\n";
+}
+
+void Utility::log_error(const std::string& message) {
+    std::cout << "cyclops error\n";
+}

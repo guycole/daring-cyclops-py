@@ -12,22 +12,26 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 
+#include "board_cell.h"
+#include "utility.h"
+
 #define MAX_BOARD_SIDE_X 75
 #define MAX_BOARD_SIDE_Y 75
 
 #ifndef BOARD_MANAGER_H_
 #define BOARD_MANAGER_H_
 
-#include "board_cell.h"
-#include "utility.h"
-
 class BoardManager {
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];
+
+    Utility utility;
 
     void original_board();
 
     public:
         BoardManager();
+        void dump_board();
+
 };
 
 #endif

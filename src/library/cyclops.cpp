@@ -11,16 +11,23 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <iostream>
+
 //#include "aws_utility.h"
 #include "cyclops.h"
 //#include "player_manager.h"
 
-#include <iostream>
-
 Cyclops::Cyclops() {
     std::cout << "cyclops\n";
 
-    board_manager = BoardManager();
+    utility.log_debug("ryryr");
+    utility.log_info("ryryr");
+    utility.log_error("ryryr");
+
+    board_manager.dump_board();
+
+    //board_manager = BoardManager();
+    //utility = Utility();
 
     //player_manager = PlayerManager();
     //player_manager.add_new_player();

@@ -23,6 +23,8 @@ class BoardCell {
 
     public:
         BoardCell();
+
+        char to_ascii();
 };
 
 #endif

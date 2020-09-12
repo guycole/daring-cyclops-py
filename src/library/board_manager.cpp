@@ -22,4 +22,21 @@ BoardManager::BoardManager() {
 
 void BoardManager::original_board() {
     std::cout << "original board\n";
+    utility.log_debug("ryryr");
+
+    // planets
+    // stargates
+    // voids
+}
+
+void BoardManager::dump_board() {
+    int yy, xx;
+
+    for (yy = 0; yy < MAX_BOARD_SIDE_Y; yy++) {
+        for (xx = 0; xx < MAX_BOARD_SIDE_X; xx++) {
+            std::cout << board[yy][xx].to_ascii();
+        }
+
+        std::cout << std::endl;
+    }
 }

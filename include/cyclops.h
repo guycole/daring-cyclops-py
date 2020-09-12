@@ -13,10 +13,13 @@
 */
 #include <iostream>
 
+#include "board_manager.h"
+
+#include "utility.h"
+
 #ifndef CYCLOPS_H_
 #define CYCLOPS_H_
 
-#include "board_manager.h"
 /*
 #include "input_manager.h"
 #include "output_manager.h"
@@ -26,6 +29,8 @@
 
 class Cyclops {
     BoardManager board_manager;
+    Utility utility;
+
  /*
     InputManager input_manager;
     OutputManager output_manager;
