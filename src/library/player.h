@@ -14,8 +14,7 @@
 #ifndef PLAYER_H_
 #define PLAYER_H_
 
-enum class PlayerRank { kCadet, kLieutenant, kCaptain,  kAdmiral};
-enum class PlayerTeam { kRed, kBlue };
+#include "utility.h"
 
 class Player {
     bool active;

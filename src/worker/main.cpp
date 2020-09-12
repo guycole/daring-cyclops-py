@@ -28,7 +28,7 @@ int main(int argc, char *argv[]) {
     std::cout << string << std::endl;
 
     Cyclops cyclops;
-    cyclops.run_event_loop();
+//    cyclops.run_event_loop();
 //    cyclops.run_json_command();
 //    cyclops.add_new_player();
 

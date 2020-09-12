@@ -14,11 +14,10 @@
 #include <string>
 
 #include "player.h"
+#include "utility.h"
 
 #ifndef SHIP_H_
 #define SHIP_H_
-
-enum class ShipType { kScout, kFighter, kMiner, kFlagship };
 
 class Ship {
     int warp_engines;

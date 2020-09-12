@@ -11,15 +11,16 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include "aws_utility.h"
+//#include "aws_utility.h"
 #include "cyclops.h"
-#include "player_manager.h"
+//#include "player_manager.h"
 
 #include <iostream>
 
 Cyclops::Cyclops() {
-    int xx = 0;
     std::cout << "cyclops\n";
+
+    board_manager = BoardManager();
 
     //player_manager = PlayerManager();
     //player_manager.add_new_player();
@@ -33,6 +34,7 @@ void Cyclops::add_new_player() {
 }
 #endif
 
+#if 0
 void Cyclops::run_event_loop() {
     std::cout << "cyclops run_event_loop\n";
 
@@ -45,3 +47,4 @@ void Cyclops::run_event_loop() {
 void Cyclops::run_json_command() {
     std::cout << "cyclops run_json_command\n";
 }
+#endif

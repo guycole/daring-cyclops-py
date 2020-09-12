@@ -31,6 +31,8 @@ Ship::Ship() {
 
 void Ship::get_ship_name(char *results, PlayerTeam team, ShipType ship_type) {
     switch(team) {
+        case PlayerTeam::kNeutral:
+            break;
         case PlayerTeam::kBlue:
             switch(ship_type) {
                 case ShipType::kScout:

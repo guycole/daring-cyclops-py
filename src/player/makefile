@@ -2,6 +2,7 @@
 # Title:makefile
 #
 # Description:
+#   Build the cyclops player executable
 #
 #   'make size' returns the quantity of lines in this directory
 #   'make clean' removes all core and object files
@@ -18,9 +19,10 @@
 #
 # Directories.
 #
-DEVDIR = $(HOME)/daring-cyclops/src/cyclops_manager
-INCDIR = $(DEVDIR)/include
-LIBDIR = $(DEVDIR)/lib
+BASEDIR = $(HOME)/daring-cyclops
+BINDIR = $(BASEDIR)/bin
+INCDIR = $(BASEDIR)/include
+LIBDIR = $(BASEDIR)/lib
 
 #
 # Header Files.
@@ -29,7 +31,7 @@ LIBDIR = $(DEVDIR)/lib
 #
 # Libraries.
 #
-CYCLOPS = cyclops
+LIBRARY = $(LIBDIR)/libcyclops.a
 
 #
 # Configurations.
@@ -38,8 +40,7 @@ ARFLAGS = -r
 CMACS  = -DTRACE=1
 CFLAGS = -g -Wall -I$(INCDIR)
 DEPEND_FLAG = -MM
-#CPPFLAGS = -g -Wall -Wc++11-extensions -I$(INCDIR)
-CPPFLAGS = -g -Wall -I$(INCDIR)
+CPPFLAGS = -g -Wall -I. -I$(INCDIR)
 
 #
 # Tools.
@@ -50,29 +51,24 @@ INDENT = indent
 LATEX = latex
 
 #
-# Executable Names.
+# Executablees.
 #
+PLAYER = $(BINDIR)/player
 
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o 
+OBJS = main.o 
 
 #
 # Finally, some work...
 #
-all: $(CYCLOPS)
+all: $(PLAYER)
 
 include depend.include
 
-$(CYCLOPS): $(OBJS)
-	$(CC) -o $@ $(OBJS) -luuid
-
-cyclops.o: cyclops.cpp cyclops.h
-	$(CC) -c $(CPPFLAGS) $?
-
-main.o: main.cpp
-	$(CC) -c $(CPPFLAGS) $?
+$(PLAYER): $(OBJS) $(LIBRARY)
+	$(CC) -o $@ $(OBJS) $(LIBRARY) -luuid
 
 #
 #  Update the TAGS file.
@@ -109,5 +105,5 @@ clean:
 #
 .PHONY ultraclean:
 ultraclean:
-	-@rm -f *~ TAGS depend.include $(CYCLOPS)
+	-@rm -f *~ *.d TAGS depend.include $(PLAYER)
 	-@touch depend.include

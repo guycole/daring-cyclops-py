@@ -1,8 +1,7 @@
 /*
-** Title:board_cell.cpp
+** Title:utility.cpp
 **
 ** Description:
-**   game board cell
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,11 +10,6 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include <iostream>
+#include "utility.h"
 
-#include "board_cell.h"
-
-BoardCell::BoardCell() {;
-    bct = BoardCellType::kSpace;
-    team = PlayerTeam:: kNeutral;
-}
+Utility::Utility() { }

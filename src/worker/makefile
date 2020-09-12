@@ -2,6 +2,7 @@
 # Title:makefile
 #
 # Description:
+#   Build the cyclops worker executable
 #
 #   'make size' returns the quantity of lines in this directory
 #   'make clean' removes all core and object files
@@ -18,9 +19,10 @@
 #
 # Directories.
 #
-DEVDIR = $(HOME)/daring-cyclops/src/cyclops
-INCDIR = $(DEVDIR)/include
-LIBDIR = $(DEVDIR)/lib
+BASEDIR = $(HOME)/daring-cyclops
+BINDIR = $(BASEDIR)/bin
+INCDIR = $(BASEDIR)/include
+LIBDIR = $(BASEDIR)/lib
 
 #
 # Header Files.
@@ -29,7 +31,7 @@ LIBDIR = $(DEVDIR)/lib
 #
 # Libraries.
 #
-CYCLOPS = cyclops
+LIBRARY = $(LIBDIR)/libcyclops.a
 
 #
 # Configurations.
@@ -38,8 +40,7 @@ ARFLAGS = -r
 CMACS  = -DTRACE=1
 CFLAGS = -g -Wall -I$(INCDIR)
 DEPEND_FLAG = -MM
-#CPPFLAGS = -g -Wall -Wc++11-extensions -I$(INCDIR)
-CPPFLAGS = -g -Wall -I$(INCDIR)
+CPPFLAGS = -g -Wall -I. -I$(INCDIR)
 
 #
 # Tools.
@@ -50,65 +51,24 @@ INDENT = indent
 LATEX = latex
 
 #
-# Executable Names.
+# Executablees.
 #
+WORKER = $(BINDIR)/worker
 
 #
 # Object Files.
 #
-OBJS = cyclops.o main.o aws_utility.o player.o player_manager.o ship.o ship_manager.o board_cell.o board_manager.o input_manager.o output_manager.o player_message.o player_message_tell.o player_message_time.o
+OBJS = main.o 
 
 #
 # Finally, some work...
 #
-all: $(CYCLOPS)
+all: $(WORKER)
 
 include depend.include
 
-$(CYCLOPS): $(OBJS)
-	$(CC) -o $@ $(OBJS) -luuid
-
-cyclops.o: cyclops.cpp cyclops.h
-	$(CC) -c $(CPPFLAGS) $?
-
-main.o: main.cpp
-	$(CC) -c $(CPPFLAGS) $?
-
-aws_utility.o: aws_utility.cpp aws_utility.h
-	$(CC) -c $(CPPFLAGS) $?
-
-game_board.o: board_manager.cpp board_manager.h
-	$(CC) -c $(CPPFLAGS) $?
-
-game_board_cell.o: board_cell.cpp board_cell.h
-	$(CC) -c $(CPPFLAGS) $?
-
-input_manager.o: input_manager.cpp input_manager.h
-	$(CC) -c $(CPPFLAGS) $?
-
-output_manager.o: output_manager.cpp output_manager.h
-	$(CC) -c $(CPPFLAGS) $?
-
-player.o: player.cpp player.h
-	$(CC) -c $(CPPFLAGS) $?
-
-player_manager.o: player_manager.cpp player_manager.h
-	$(CC) -c $(CPPFLAGS) $?
-
-player_message.o: player_message.cpp player_message.h
-	$(CC) -c $(CPPFLAGS) $?
-
-player_message_tell.o: player_message_tell.cpp player_message_tell.h
-	$(CC) -c $(CPPFLAGS) $?
-
-player_message_time.o: player_message_time.cpp player_message_time.h
-	$(CC) -c $(CPPFLAGS) $?
-
-ship.o: ship.cpp ship.h
-	$(CC) -c $(CPPFLAGS) $?
-
-ship_manager.o: ship_manager.cpp ship_manager.h
-	$(CC) -c $(CPPFLAGS) $?
+$(WORKER): $(OBJS) $(LIBRARY)
+	$(CC) -o $@ $(OBJS) $(LIBRARY) -luuid
 
 #
 #  Update the TAGS file.
@@ -145,5 +105,5 @@ clean:
 #
 .PHONY ultraclean:
 ultraclean:
-	-@rm -f *~ TAGS depend.include $(CYCLOPS)
+	-@rm -f *~ *.d TAGS depend.include $(WORKER)
 	-@touch depend.include

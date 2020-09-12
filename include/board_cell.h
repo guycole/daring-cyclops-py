@@ -15,9 +15,11 @@
 #ifndef BOARD_CELL_H_
 #define BOARD_CELL_H_
 
-class BoardCell {
+#include "utility.h"
 
-    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
+class BoardCell {
+    BoardCellType bct;
+    PlayerTeam team;
 
     public:
         BoardCell();

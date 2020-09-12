@@ -19,6 +19,7 @@
 #define BOARD_MANAGER_H_
 
 #include "board_cell.h"
+#include "utility.h"
 
 class BoardManager {
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];

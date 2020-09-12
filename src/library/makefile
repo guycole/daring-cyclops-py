@@ -2,6 +2,7 @@
 # Title:makefile
 #
 # Description:
+#   Build the cyclops library.
 #
 #   'make size' returns the quantity of lines in this directory
 #   'make clean' removes all core and object files
@@ -18,9 +19,9 @@
 #
 # Directories.
 #
-DEVDIR = $(HOME)/daring-cyclops/src/library
-INCDIR = $(DEVDIR)/include
-LIBDIR = $(DEVDIR)/lib
+BASEDIR = $(HOME)/daring-cyclops
+INCDIR = $(BASEDIR)/include
+LIBDIR = $(BASEDIR)/lib
 
 #
 # Header Files.
@@ -38,7 +39,7 @@ ARFLAGS = -r
 CMACS  = -DTRACE=1
 CFLAGS = -g -Wall -I$(INCDIR)
 DEPEND_FLAG = -MM
-CPPFLAGS = -g -Wall -I$(INCDIR)
+CPPFLAGS = -g -Wall -I. -I$(INCDIR)
 
 #
 # Tools.
@@ -49,13 +50,9 @@ INDENT = indent
 LATEX = latex
 
 #
-# Executable Names.
-#
-
-#
 # Object Files.
 #
-OBJS = board_cell.o board_manager.o player.o player_manager.o player_message.o player_message_tell.o player_message_time.o ship.o ship_manager.o 
+OBJS = board_cell.o board_manager.o cyclops.o player.o player_manager.o player_message.o player_message_tell.o player_message_time.o ship.o ship_manager.o utility.o
 
 #
 # Finally, some work...
@@ -102,5 +99,5 @@ clean:
 #
 .PHONY ultraclean:
 ultraclean:
-	-@rm -f *~ TAGS depend.include $(CYCLOPS)
+	-@rm -f *~ *.d TAGS depend.include $(LIBRARY)
 	-@touch depend.include
