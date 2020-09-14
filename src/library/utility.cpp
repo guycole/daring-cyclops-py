@@ -11,6 +11,7 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 #include <iostream>
+#include <string>
 
 #include "utility.h"
 
@@ -29,3 +30,18 @@ void Utility::log_info(const std::string& message) {
 void Utility::log_error(const std::string& message) {
     std::cout << "cyclops error\n";
 }
+
+void Utility::generate_uuid(std::string *buffer) {
+    char temp[MAX_LENGTH_UUID];
+
+    uuid_t candidate;
+    uuid_generate(candidate);
+    uuid_unparse(candidate, temp);
+
+    *buffer = temp;
+}
+
+int Utility::get_random_int(int limit) {
+    return 0;
+}
+

@@ -13,10 +13,14 @@
 */
 #include <string>
 
+#include <uuid/uuid.h>
+
 #ifndef UTILITY_H_
 #define UTILITY_H_
 
-enum class BoardCellType { kMine, kPlanet, kShip, kSpace, kStargate, kVoid };
+#define MAX_LENGTH_UUID 48
+
+enum class BoardCellType { kBlackhole, kMine, kPlanet, kShip, kSpace, kStargate, kVoid };
 
 enum class PlayerRank { kCadet, kLieutenant, kCaptain,  kAdmiral};
 enum class PlayerTeam { kNeutral, kRed, kBlue };
@@ -31,6 +35,11 @@ class Utility {
         void log_debug(const std::string& message);
         void log_info(const std::string& message);
         void log_error(const std::string& message);
+
+        void generate_uuid(std::string *buffer);
+
+        int get_random_int(int limit);
+
 };
 
 #endif

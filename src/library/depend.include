@@ -1,30 +1,67 @@
 aws_utility.o: aws_utility.cpp aws_utility.h
 board_cell.o: board_cell.cpp \
  /home/gsc/daring-cyclops/include/board_cell.h \
- /home/gsc/daring-cyclops/include/utility.h
+ /home/gsc/daring-cyclops/include/board_token.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/location.h
 board_manager.o: board_manager.cpp \
  /home/gsc/daring-cyclops/include/board_manager.h \
  /home/gsc/daring-cyclops/include/board_cell.h \
+ /home/gsc/daring-cyclops/include/board_token.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/location.h \
+ /home/gsc/daring-cyclops/include/planet.h \
+ /home/gsc/daring-cyclops/include/stargate.h \
+ /home/gsc/daring-cyclops/include/location.h
+board_token.o: board_token.cpp \
+ /home/gsc/daring-cyclops/include/board_token.h \
  /home/gsc/daring-cyclops/include/utility.h
 cyclops.o: cyclops.cpp /home/gsc/daring-cyclops/include/cyclops.h \
  /home/gsc/daring-cyclops/include/board_manager.h \
  /home/gsc/daring-cyclops/include/board_cell.h \
- /home/gsc/daring-cyclops/include/utility.h
+ /home/gsc/daring-cyclops/include/board_token.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/location.h \
+ /home/gsc/daring-cyclops/include/planet.h \
+ /home/gsc/daring-cyclops/include/stargate.h \
+ /home/gsc/daring-cyclops/include/player_manager.h \
+ /home/gsc/daring-cyclops/include/error_message.h \
+ /home/gsc/daring-cyclops/include/player.h \
+ /home/gsc/daring-cyclops/include/ship_manager.h \
+ /home/gsc/daring-cyclops/include/ship.h
+error_message.o: error_message.cpp \
+ /home/gsc/daring-cyclops/include/error_message.h
 input_manager.o: input_manager.cpp input_manager.h
 json_command.o: json_command.cpp \
  /home/gsc/daring-cyclops/include/board_cell.h \
- /home/gsc/daring-cyclops/include/utility.h
+ /home/gsc/daring-cyclops/include/board_token.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/location.h
+location.o: location.cpp /home/gsc/daring-cyclops/include/location.h
 output_manager.o: output_manager.cpp output_manager.h
-player.o: player.cpp player.h /home/gsc/daring-cyclops/include/utility.h
-player_manager.o: player_manager.cpp player_manager.h player.h \
+planet.o: planet.cpp /home/gsc/daring-cyclops/include/planet.h \
+ /home/gsc/daring-cyclops/include/utility.h
+player.o: player.cpp /home/gsc/daring-cyclops/include/player.h \
+ /home/gsc/daring-cyclops/include/utility.h
+player_manager.o: player_manager.cpp \
+ /home/gsc/daring-cyclops/include/player_manager.h \
+ /home/gsc/daring-cyclops/include/error_message.h \
+ /home/gsc/daring-cyclops/include/player.h \
  /home/gsc/daring-cyclops/include/utility.h
 player_message.o: player_message.cpp player_message.h
 player_message_tell.o: player_message_tell.cpp player_message_tell.h \
  player_message.h
 player_message_time.o: player_message_time.cpp player_message_time.h \
  player_message.h
-ship.o: ship.cpp ship.h player.h \
+ship.o: ship.cpp /home/gsc/daring-cyclops/include/ship.h \
+ /home/gsc/daring-cyclops/include/player.h \
  /home/gsc/daring-cyclops/include/utility.h
-ship_manager.o: ship_manager.cpp ship_manager.h player.h \
+ship_manager.o: ship_manager.cpp \
+ /home/gsc/daring-cyclops/include/ship_manager.h \
+ /home/gsc/daring-cyclops/include/ship.h \
+ /home/gsc/daring-cyclops/include/player.h \
+ /home/gsc/daring-cyclops/include/utility.h
+stargate.o: stargate.cpp /home/gsc/daring-cyclops/include/stargate.h \
+ /home/gsc/daring-cyclops/include/location.h \
  /home/gsc/daring-cyclops/include/utility.h
 utility.o: utility.cpp /home/gsc/daring-cyclops/include/utility.h

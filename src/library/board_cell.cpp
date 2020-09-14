@@ -16,12 +16,22 @@
 #include "board_cell.h"
 
 BoardCell::BoardCell() {
-    bct = BoardCellType::kSpace;
-    team = PlayerTeam:: kNeutral;
+    root = NULL;
+
+   // bct = BoardCellType::kSpace;
+   // team = PlayerTeam:: kNeutral;
+}
+
+void BoardCell::set_type(BoardCellType arg) {
+    //TODO type changes are logged
+    bct = arg;
 }
 
 char BoardCell::to_ascii() {
     switch (bct) {
+        case BoardCellType::kBlackhole:
+            return 'B';
+            break;
         case BoardCellType::kMine:
             return '#';
             break;
@@ -29,13 +39,13 @@ char BoardCell::to_ascii() {
             return '*';
             break;
         case BoardCellType::kShip:
-            return 'X';
+            return 'S';
             break;
         case BoardCellType::kSpace:
             return '.';
             break;
         case BoardCellType::kStargate:
-            return 'G';
+            return 'X';
             break;
         case BoardCellType::kVoid:
             return ' ';

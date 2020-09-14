@@ -17,20 +17,11 @@
 #include "cyclops.h"
 
 int main(int argc, char *argv[]) {
-    std::cout << "knock knock 2\n";
-
-    uuid_t id;
-    uuid_generate(id);
-
-    char *string = new char[100];
-    uuid_unparse(id, string);
-
-    std::cout << string << std::endl;
+    std::cout << "main main\n";
 
     Cyclops cyclops;
-//    cyclops.run_event_loop();
-//    cyclops.run_json_command();
-//    cyclops.add_new_player();
+    cyclops.generate_game();
+    cyclops.scenario1();
 
     return 0;
 }

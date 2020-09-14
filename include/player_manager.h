@@ -11,6 +11,7 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include "error_message.h"
 #include "player.h"
 
 #define MAX_PLAYER_PER_SIDE 5
@@ -19,14 +20,14 @@
 #define PLAYER_MANAGER_H_
 
 class PlayerManager {
-    private:
-        Player blue_team[MAX_PLAYER_PER_SIDE];
-        Player red_team[MAX_PLAYER_PER_SIDE];
+    Player blue_team[MAX_PLAYER_PER_SIDE];
+    Player red_team[MAX_PLAYER_PER_SIDE];
+
     public:
         PlayerManager();
 
-        void add_new_player();
-        void remove_player();
+        int add_new_player(Player candidate);
+        int remove_player(Player candidate);
 };
 
 #endif

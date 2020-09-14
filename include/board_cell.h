@@ -11,19 +11,29 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include "board_token.h"
+#include "location.h"
+#include "utility.h"
 
 #ifndef BOARD_CELL_H_
 #define BOARD_CELL_H_
 
-#include "utility.h"
-
 class BoardCell {
+    Location location;
+    BoardToken *root;
+    bool is_void;
+
     BoardCellType bct;
     PlayerTeam team;
 
     public:
         BoardCell();
 
+        void initialize(int yy, int xx) {location.setYX(yy, xx);}
+
+        bool is_empty() {if (root == NULL) {return true;} else {return false;}}
+
+        void set_type(BoardCellType arg);
         char to_ascii();
 };
 

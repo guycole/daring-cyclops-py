@@ -2,7 +2,7 @@
 ** Title:cyclops.h
 **
 ** Description:
-**   cyclops driver
+**   cyclops main entry point
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -14,31 +14,27 @@
 #include <iostream>
 
 #include "board_manager.h"
-
+#include "player_manager.h"
+#include "ship_manager.h"
 #include "utility.h"
 
 #ifndef CYCLOPS_H_
 #define CYCLOPS_H_
 
-/*
-#include "input_manager.h"
-#include "output_manager.h"
-#include "player_manager.h"
-#include "ship_manager.h"
-*/
-
 class Cyclops {
     BoardManager board_manager;
+    PlayerManager player_manager;
+    ShipManager ship_manager;
     Utility utility;
 
- /*
-    InputManager input_manager;
-    OutputManager output_manager;
-    ShipManager ship_manager;
-    PlayerManager player_manager;
-*/
     public:
         Cyclops();
+
+        void generate_game();
+
+        void scenario1();
+
+
 //        void run_event_loop();
 //        void run_json_command();
 };

@@ -17,18 +17,44 @@
 
 PlayerManager::PlayerManager() {
     std::cout << "player manager\n";
+}
 
+int PlayerManager::add_new_player(Player candidate) {
     for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
-       // blue_team[ndx].score = 0;
+        if (candidate.get_team() == PlayerTeam::kBlue) {
+            if (!blue_team[ndx].is_active()) {
+                blue_team[ndx] = candidate;
+                return ERROR_NONE;
+            }
+        } else {
+            if (!red_team[ndx].is_active()) {
+                red_team[ndx] = candidate;
+                return ERROR_NONE;
+            }
+        }
     }
 
-    //TODO need player initialization here
+    return ERROR_USER_TABLE_FULL;
 }
 
-void PlayerManager::add_new_player() {
-    std::cout << "player manager add new player\n";
-}
+int PlayerManager::remove_player(Player candidate) {
+    for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
+        if (candidate.get_team() == PlayerTeam::kBlue) {
+            if (blue_team[ndx].is_active()) {
+                if (blue_team[ndx].get_id().compare(candidate.get_id()) == 0) {
+                    blue_team[ndx].set_inactive();
+                    return ERROR_NONE;
+                }
+            }
+        } else {
+            if (red_team[ndx].is_active()) {
+                if (red_team[ndx].get_id().compare(candidate.get_id()) == 0) {
+                    red_team[ndx].set_inactive();
+                    return ERROR_NONE;
+                }
+            }
+        }
+    }
 
-void PlayerManager::remove_player() {
-    std::cout << "player manager remove player\n";
+    return ERROR_USER_TABLE_NOT_FOUND;
 }

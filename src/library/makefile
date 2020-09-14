@@ -52,7 +52,7 @@ LATEX = latex
 #
 # Object Files.
 #
-OBJS = board_cell.o board_manager.o cyclops.o player.o player_manager.o player_message.o player_message_tell.o player_message_time.o ship.o ship_manager.o utility.o
+OBJS = board_cell.o board_manager.o board_token.o cyclops.o error_message.o location.o planet.o player.o player_manager.o player_message.o player_message_tell.o player_message_time.o ship.o ship_manager.o stargate.o utility.o
 
 #
 # Finally, some work...

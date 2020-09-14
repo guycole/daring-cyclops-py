@@ -2,7 +2,7 @@
 ** Title:cyclops.cpp
 **
 ** Description:
-**   cyclops main
+**   cyclops main entry point
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -11,26 +11,52 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <chrono>
 #include <iostream>
+#include <random>
 
 //#include "aws_utility.h"
 #include "cyclops.h"
-//#include "player_manager.h"
 
 Cyclops::Cyclops() {
     std::cout << "cyclops\n";
+
+    srand((unsigned) time(NULL));
 
     utility.log_debug("ryryr");
     utility.log_info("ryryr");
     utility.log_error("ryryr");
 
-    board_manager.dump_board();
+
+//    board_manager.dump_board();
+
+//    board_manager.service_event_loop();
 
     //board_manager = BoardManager();
     //utility = Utility();
 
     //player_manager = PlayerManager();
     //player_manager.add_new_player();
+}
+
+void Cyclops::generate_game() {
+    utility.log_info("generate game");
+
+    board_manager.generate_board();
+}
+
+void Cyclops::scenario1() {
+    Player candidate1;
+    candidate1.fresh_player("red_one", PlayerTeam::kRed);
+    player_manager.add_new_player(candidate1);
+
+    Player candidate2;
+    candidate2.fresh_player("red_two", PlayerTeam::kRed);
+    player_manager.add_new_player(candidate2);
+
+    // create ship and associate w/player
+
+    // move ship through stargate
 }
 
 #if 0
