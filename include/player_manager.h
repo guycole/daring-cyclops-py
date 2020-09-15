@@ -28,6 +28,8 @@ class PlayerManager {
 
         int add_new_player(Player candidate);
         int remove_player(Player candidate);
+
+        int get_player(const std::string& id);
 };
 
 #endif

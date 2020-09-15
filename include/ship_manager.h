@@ -11,15 +11,23 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include "error_message.h"
 #include "ship.h"
+
+#define MAX_SHIP_PER_SIDE 5
 
 #ifndef SHIP_MANAGER_H_
 #define SHIP_MANAGER_H_
 
 class ShipManager {
+    Ship blue_team[MAX_SHIP_PER_SIDE];
+    Ship red_team[MAX_SHIP_PER_SIDE];
 
     public:
         ShipManager();
+
+        int add_new_ship(Ship candidate);
+        int remove_ship(Ship candidate);
 };
 
 #endif

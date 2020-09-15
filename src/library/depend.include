@@ -16,6 +16,20 @@ board_manager.o: board_manager.cpp \
 board_token.o: board_token.cpp \
  /home/gsc/daring-cyclops/include/board_token.h \
  /home/gsc/daring-cyclops/include/utility.h
+catalog_item.o: catalog_item.cpp \
+ /home/gsc/daring-cyclops/include/catalog_item.h \
+ /home/gsc/daring-cyclops/include/planet.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/ship.h \
+ /home/gsc/daring-cyclops/include/player.h
+catalog_manager.o: catalog_manager.cpp \
+ /home/gsc/daring-cyclops/include/catalog_manager.h \
+ /home/gsc/daring-cyclops/include/error_message.h \
+ /home/gsc/daring-cyclops/include/catalog_item.h \
+ /home/gsc/daring-cyclops/include/planet.h \
+ /home/gsc/daring-cyclops/include/utility.h \
+ /home/gsc/daring-cyclops/include/ship.h \
+ /home/gsc/daring-cyclops/include/player.h
 cyclops.o: cyclops.cpp /home/gsc/daring-cyclops/include/cyclops.h \
  /home/gsc/daring-cyclops/include/board_manager.h \
  /home/gsc/daring-cyclops/include/board_cell.h \
@@ -24,11 +38,13 @@ cyclops.o: cyclops.cpp /home/gsc/daring-cyclops/include/cyclops.h \
  /home/gsc/daring-cyclops/include/location.h \
  /home/gsc/daring-cyclops/include/planet.h \
  /home/gsc/daring-cyclops/include/stargate.h \
- /home/gsc/daring-cyclops/include/player_manager.h \
+ /home/gsc/daring-cyclops/include/catalog_manager.h \
  /home/gsc/daring-cyclops/include/error_message.h \
+ /home/gsc/daring-cyclops/include/catalog_item.h \
+ /home/gsc/daring-cyclops/include/ship.h \
  /home/gsc/daring-cyclops/include/player.h \
- /home/gsc/daring-cyclops/include/ship_manager.h \
- /home/gsc/daring-cyclops/include/ship.h
+ /home/gsc/daring-cyclops/include/player_manager.h \
+ /home/gsc/daring-cyclops/include/ship_manager.h
 error_message.o: error_message.cpp \
  /home/gsc/daring-cyclops/include/error_message.h
 input_manager.o: input_manager.cpp input_manager.h
@@ -58,6 +74,7 @@ ship.o: ship.cpp /home/gsc/daring-cyclops/include/ship.h \
  /home/gsc/daring-cyclops/include/utility.h
 ship_manager.o: ship_manager.cpp \
  /home/gsc/daring-cyclops/include/ship_manager.h \
+ /home/gsc/daring-cyclops/include/error_message.h \
  /home/gsc/daring-cyclops/include/ship.h \
  /home/gsc/daring-cyclops/include/player.h \
  /home/gsc/daring-cyclops/include/utility.h

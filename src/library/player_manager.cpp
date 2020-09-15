@@ -38,6 +38,12 @@ int PlayerManager::add_new_player(Player candidate) {
 }
 
 int PlayerManager::remove_player(Player candidate) {
+
+#if 0
+    int result = get_player(candidate.get_id());
+    if (result == ERROR_NONE) {
+    }
+
     for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
         if (candidate.get_team() == PlayerTeam::kBlue) {
             if (blue_team[ndx].is_active()) {
@@ -55,6 +61,30 @@ int PlayerManager::remove_player(Player candidate) {
             }
         }
     }
+#endif
 
+    return ERROR_USER_TABLE_NOT_FOUND;
+}
+
+int get_player(const std::string& id) {
+#if 0
+    for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
+        if (candidate.get_team() == PlayerTeam::kBlue) {
+            if (blue_team[ndx].is_active()) {
+                if (blue_team[ndx].get_id().compare(candidate.get_id()) == 0) {
+                    // found
+                    return ERROR_NONE;
+                }
+            }
+        } else {
+            if (red_team[ndx].is_active()) {
+                if (red_team[ndx].get_id().compare(candidate.get_id()) == 0) {
+                    // found
+                    return ERROR_NONE;
+                }
+            }
+        }
+    }
+#endif
     return ERROR_USER_TABLE_NOT_FOUND;
 }

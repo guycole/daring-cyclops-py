@@ -54,8 +54,13 @@ void Cyclops::scenario1() {
     candidate2.fresh_player("red_two", PlayerTeam::kRed);
     player_manager.add_new_player(candidate2);
 
-    // create ship and associate w/player
+    std::string buffer;
 
+    // create ship and associate w/player
+    Ship ship1;
+    catalog_manager.add_player(candidate1, &buffer);
+    catalog_manager.add_player(candidate1, &buffer);
+    catalog_manager.add_player(candidate1, &buffer);
     // move ship through stargate
 }
 

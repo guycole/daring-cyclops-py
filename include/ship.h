@@ -20,6 +20,10 @@
 #define SHIP_H_
 
 class Ship {
+    bool active;
+    std::string id; // UUID
+    Player owner;
+
     int warp_engines;
     int impulse_engines;
     int photon_torpedo_tubes;
@@ -29,8 +33,6 @@ class Ship {
     int life_support;
     int radio;
     int tractor_beam;
-
-    char *name;
 
     static const std::string kBlueScouts[];
     static const std::string kBlueFighters[];
@@ -46,6 +48,20 @@ class Ship {
 
     public:
         Ship();
+
+        bool is_active() {return active;}
+        void set_active() {active = true;}
+        void set_inactive() {active = false;}
+
+        std::string get_id() {return id;}
+        void set_id(std::string arg) {id = arg;}
+
+//        PlayerTeam get_team() {return team;}
+//        void set_team(PlayerTeam arg) {team = arg;}
+
+        void fresh_ship(std::string id, PlayerTeam team);
+
+        void dump_player();
 };
 
 #endif

@@ -14,6 +14,7 @@
 #include <iostream>
 
 #include "board_manager.h"
+#include "catalog_manager.h"
 #include "player_manager.h"
 #include "ship_manager.h"
 #include "utility.h"
@@ -23,6 +24,7 @@
 
 class Cyclops {
     BoardManager board_manager;
+    CatalogManager catalog_manager;
     PlayerManager player_manager;
     ShipManager ship_manager;
     Utility utility;
@@ -33,7 +35,6 @@ class Cyclops {
         void generate_game();
 
         void scenario1();
-
 
 //        void run_event_loop();
 //        void run_json_command();
