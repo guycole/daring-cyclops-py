@@ -24,12 +24,17 @@
 #define CATALOG_MANAGER_H_
 
 class CatalogManager {
+    CatalogManager() {}
+    ~CatalogManager() {}
+
+    static CatalogManager *instance;
+
     Utility utility;
 
     std::map<std::string, CatalogItem> catalog_map;
 
     public:
-        CatalogManager();
+        static CatalogManager *get_instance();
 
         int add_player(Player arg, std::string *id);
         int add_ship(Ship arg, std::string *id);

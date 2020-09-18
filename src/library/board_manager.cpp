@@ -18,6 +18,17 @@
 #include "board_manager.h"
 #include "location.h"
 
+BoardManager *BoardManager::instance = 0;
+
+BoardManager *BoardManager::get_instance() {
+    if (instance == 0) {
+        instance = new BoardManager();
+    }
+
+    return instance;
+}
+
+#if 0
 BoardManager::BoardManager() {
     std::cout << "board manager\n";
 
@@ -25,7 +36,9 @@ BoardManager::BoardManager() {
 
     //original_board();
 }
+#endif
 
+#if 0
 void BoardManager::generate_board() {
     initialize_cells();
 
@@ -57,8 +70,9 @@ void BoardManager::generate_stargates() {
     add_stargate(7, 64, 35);
     add_stargate(8, 64, 64);
 }
+#endif
 
-
+#if 0
 void BoardManager::add_stargate(int ndx, int yy, int xx) {
     Stargate *candidate = new Stargate(yy, xx);
 
@@ -77,7 +91,9 @@ void BoardManager::initialize_cells() {
 void BoardManager::service_event_loop() {
     std::cout << "service_event_loop\n";
 }
+#endif
 
+#if 0
 void BoardManager::original_board() {
     std::cout << "original board\n";
     utility.log_debug("ryryr");
@@ -351,7 +367,9 @@ void BoardManager::original_board() {
     add_void(73, 21, 37);
     add_void(74, 19, 48);
 }
+#endif
 
+#if 0
 void BoardManager::add_planet(int ndx, int yy, int xx) {
     board[yy][xx].set_type(BoardCellType::kPlanet);
 
@@ -378,19 +396,20 @@ void BoardManager::add_void(int yy, int x1, int x2) {
         board[yy][xx].set_type(BoardCellType::kVoid);
     }
 }
+#endif
 
+#if 0
 void BoardManager::dump_board() {
     int yy, xx;
 
-#if 0
-    for (yy = 0; yy < MAX_BOARD_SIDE_Y; yy++) {
-        for (xx = 0; xx < MAX_BOARD_SIDE_X; xx++) {
-            std::cout << board[yy][xx].to_ascii();
-        }
+//    for (yy = 0; yy < MAX_BOARD_SIDE_Y; yy++) {
+//        for (xx = 0; xx < MAX_BOARD_SIDE_X; xx++) {
+//            std::cout << board[yy][xx].to_ascii();
+//        }
+//
+//        std::cout << std::endl;
+//    }
 
-        std::cout << std::endl;
-    }
-#endif
 
     for (yy = MAX_BOARD_SIDE_Y-1; yy >= 0; yy--) {
         for (xx = 0; xx < MAX_BOARD_SIDE_X; xx++) {
@@ -400,3 +419,4 @@ void BoardManager::dump_board() {
         std::cout << std::endl;
     }
 }
+#endif

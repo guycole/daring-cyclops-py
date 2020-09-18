@@ -23,18 +23,19 @@
 #define CYCLOPS_H_
 
 class Cyclops {
-    BoardManager board_manager;
-    CatalogManager catalog_manager;
-    PlayerManager player_manager;
-    ShipManager ship_manager;
+    BoardManager *board_manager;
+    CatalogManager *catalog_manager;
+//    PlayerManager player_manager;
+//    ShipManager ship_manager;
     Utility utility;
 
     public:
         Cyclops();
+        ~Cyclops() {}
 
         void generate_game();
 
-        void scenario1();
+//        void scenario1();
 
 //        void run_event_loop();
 //        void run_json_command();

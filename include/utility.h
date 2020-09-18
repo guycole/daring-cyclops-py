@@ -2,7 +2,7 @@
 ** Title:utility.h
 **
 ** Description:
-**   utility
+**   utility support
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)

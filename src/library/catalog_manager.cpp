@@ -15,9 +15,21 @@
 
 #include <iostream>
 
+CatalogManager *CatalogManager::instance = 0;
+
+CatalogManager *CatalogManager::get_instance() {
+    if (instance == 0) {
+        instance = new CatalogManager();
+    }
+
+    return instance;
+}
+
+#if 0
 CatalogManager::CatalogManager() {
     std::cout << "catalog manager\n";
 }
+#endif
 
 int CatalogManager::add_player(Player arg, std::string *id) {
     CatalogItem cat_item;

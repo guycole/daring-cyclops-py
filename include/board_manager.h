@@ -23,6 +23,12 @@
 #define BOARD_MANAGER_H_
 
 class BoardManager {
+    BoardManager() {}
+    ~BoardManager() {}
+
+    static BoardManager *instance;
+
+/////////
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];
 
     Planet *planets;
@@ -44,14 +50,17 @@ class BoardManager {
     void add_void(int yy, int x1, int x2);
 
     public:
-        BoardManager();
 
-        void generate_board();
+  //      BoardManager();
+
+        static BoardManager *get_instance();
+
+//        void generate_board();
 
 /////
 
-        void dump_board();
-        void service_event_loop();
+//        void dump_board();
+//        void service_event_loop();
 };
 
 #endif

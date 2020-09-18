@@ -23,11 +23,14 @@ Cyclops::Cyclops() {
 
     srand((unsigned) time(NULL));
 
+    board_manager = BoardManager::get_instance();
+    catalog_manager = CatalogManager::get_instance();
+
+/*
     utility.log_debug("ryryr");
     utility.log_info("ryryr");
     utility.log_error("ryryr");
-
-
+*/
 //    board_manager.dump_board();
 
 //    board_manager.service_event_loop();
@@ -40,19 +43,20 @@ Cyclops::Cyclops() {
 }
 
 void Cyclops::generate_game() {
-    utility.log_info("generate game");
+//    utility.log_info("generate game");
 
-    board_manager.generate_board();
+//    board_manager.generate_board();
 }
 
-void Cyclops::scenario1() {
+//void Cyclops::scenario1() {
+#if 0
     Player candidate1;
     candidate1.fresh_player("red_one", PlayerTeam::kRed);
-    player_manager.add_new_player(candidate1);
+//    player_manager.add_new_player(candidate1);
 
     Player candidate2;
     candidate2.fresh_player("red_two", PlayerTeam::kRed);
-    player_manager.add_new_player(candidate2);
+//    player_manager.add_new_player(candidate2);
 
     std::string buffer;
 
@@ -62,7 +66,8 @@ void Cyclops::scenario1() {
     catalog_manager.add_player(candidate1, &buffer);
     catalog_manager.add_player(candidate1, &buffer);
     // move ship through stargate
-}
+#endif
+//}
 
 #if 0
 void Cyclops::add_new_player() {

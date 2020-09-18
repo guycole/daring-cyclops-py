@@ -19,9 +19,10 @@
 int main(int argc, char *argv[]) {
     std::cout << "main main\n";
 
-    Cyclops cyclops;
-    cyclops.generate_game();
-    cyclops.scenario1();
+    Cyclops *cyclops = new Cyclops();
+    cyclops->generate_game();
+
+//    cyclops.scenario1();
 
     return 0;
 }
