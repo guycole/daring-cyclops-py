@@ -15,7 +15,4 @@
 
 #include <iostream>
 
-BoardToken::BoardToken() {
-    std::cout << "board token\n";
-
-}
+BoardToken::BoardToken() { }

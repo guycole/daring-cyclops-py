@@ -22,8 +22,9 @@
 #define STARGATE_H_
 
 class Stargate: public BoardToken {
-    int damage; // gate damage
-    int energy; // gate energy
+    int damage;  // gate damage
+    int energy;  // gate energy
+    int gate_id; // gates are 0 to 8, for diagnostics only
 
     void generate_routes(int ndx);
     void get_location_for_stargate(int ndx, Location *result);
@@ -51,9 +52,6 @@ class Stargate: public BoardToken {
 
     public:
         Stargate(int ndx);
-
-        // FIXME why do I need this?  why not inherit from board token?
-        //Location get_location() { return location; }
 };
 
 #endif

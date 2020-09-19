@@ -56,21 +56,29 @@ void BoardManager::generate_stargates() {
     CatalogManager *catalog_manager = CatalogManager::get_instance();
 
     for (int ndx = 0; ndx < 9; ndx++) {
+        std::cout << "xoxoxoxoxo:" << ndx << std::endl;
         Stargate *candidate = new Stargate(ndx);
 
         int xx = candidate->get_location().getX();
         int yy = candidate->get_location().getY();
         std::cout << "target:" << xx << ":" << yy << std::endl;
-        std::cout << "aaa:" << candidate->get_id() << std::endl;
+        std::cout << "target id:" << candidate->get_id() << std::endl;
+        std::cout << "xoxoxoxoxo:" << ndx << std::endl;
 
         BoardCell *cell = &(board[yy][xx]);
-        std::cout << "cell:" << cell->get_location().getX() << std::endl;
+        xx = cell->get_location().getX();
+        yy = cell->get_location().getY();
+        std::cout << "cell:" << xx << ":" << yy << std::endl;
+
         cell->set_token(candidate);
 
-//        cell = board[yy][xx];
+        BoardToken *token = cell->get_token();
+        xx = token->get_location().getX();
+        yy = token->get_location().getY();
+        std::cout << "token:" << xx << ":" << yy << std::endl;
 
-//        BoardToken *token = board[yy][xx].get_token();
-//        std::cout << "zzz:" << token->get_id() << std::endl;
+        Stargate *test = (Stargate *) token;
+        std::cout << "test id:" << test->get_id() << std::endl;
 
         // add to catalog
     }

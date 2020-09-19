@@ -20,13 +20,17 @@ Stargate::Stargate(int ndx) {
 
     damage = 0;
     energy = 100;
+    gate_id = ndx;
+
+    btt = BoardTokenType::kStargate;
 
     utility.generate_uuid(&id);
-
-    std::cout << "id:" << id << std::endl;
+    std::cout << "id:" << gate_id << ":" << id << std::endl;
 
     get_location_for_stargate(ndx, &location);
-//    generate_routes(ndx);
+    std::cout << "stargate location:" << location.getX() << ":" << location.getY() << std::endl;
+
+    generate_routes(ndx);
 }
 
 void Stargate::load_destination(DIRECTION_ARRAY remote_stargates) {

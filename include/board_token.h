@@ -22,10 +22,13 @@
 class BoardToken {
     protected:
         std::string id; // UUID
+        BoardTokenType btt;
         Location location;
 
     public:
         BoardToken();
+
+        BoardTokenType get_type() { return btt; }
 
         Location get_location() { return location; }
 
