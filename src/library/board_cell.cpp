@@ -16,18 +16,19 @@
 #include "board_cell.h"
 
 BoardCell::BoardCell() {
+    black_hole_flag = false;
+    void_flag = false;
     root = NULL;
-
-   // bct = BoardCellType::kSpace;
-   // team = PlayerTeam:: kNeutral;
 }
 
-void BoardCell::set_type(BoardCellType arg) {
-    //TODO type changes are logged
-    bct = arg;
+void BoardCell::initialize(int yy, int xx) {
+    location.setYX(yy, xx);
 }
+
+//////////
 
 char BoardCell::to_ascii() {
+#if 0
     switch (bct) {
         case BoardCellType::kBlackhole:
             return 'B';
@@ -51,6 +52,6 @@ char BoardCell::to_ascii() {
             return ' ';
             break;
     }
-
+#endif
     return 'V';
 }

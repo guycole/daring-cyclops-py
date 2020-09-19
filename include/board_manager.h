@@ -12,6 +12,7 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 #include "board_cell.h"
+#include "catalog_manager.h"
 #include "planet.h"
 #include "stargate.h"
 #include "utility.h"
@@ -28,14 +29,14 @@ class BoardManager {
 
     static BoardManager *instance;
 
-/////////
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];
+
+    void generate_stargates();
+
+/////////
 
     Planet *planets;
     Stargate *stargates;
-
-    void add_stargate(int ndx, int yy, int xx);
-    void generate_stargates();
 
     void initialize_cells();
 
@@ -55,7 +56,7 @@ class BoardManager {
 
         static BoardManager *get_instance();
 
-//        void generate_board();
+        void generate_board();
 
 /////
 

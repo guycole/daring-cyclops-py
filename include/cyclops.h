@@ -24,7 +24,7 @@
 
 class Cyclops {
     BoardManager *board_manager;
-    CatalogManager *catalog_manager;
+//    CatalogManager *catalog_manager;
 //    PlayerManager player_manager;
 //    ShipManager ship_manager;
     Utility utility;

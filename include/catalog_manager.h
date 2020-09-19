@@ -16,6 +16,7 @@
 #include "catalog_item.h"
 #include "player.h"
 #include "ship.h"
+#include "stargate.h"
 #include "utility.h"
 
 #include <map>
@@ -38,9 +39,11 @@ class CatalogManager {
 
         int add_player(Player arg, std::string *id);
         int add_ship(Ship arg, std::string *id);
+        int add_stargate(Stargate *arg);
 
         int get_player(const std::string& id);
         int get_ship(const std::string& id);
+        int get_stargate(const std::string& id);
 };
 
 #endif

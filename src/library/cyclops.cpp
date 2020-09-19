@@ -24,7 +24,7 @@ Cyclops::Cyclops() {
     srand((unsigned) time(NULL));
 
     board_manager = BoardManager::get_instance();
-    catalog_manager = CatalogManager::get_instance();
+    board_manager->generate_board();
 
 /*
     utility.log_debug("ryryr");

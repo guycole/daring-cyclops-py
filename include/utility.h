@@ -20,7 +20,11 @@
 
 #define MAX_LENGTH_UUID 48
 
-enum class BoardCellType { kBlackhole, kMine, kPlanet, kShip, kSpace, kStargate, kVoid };
+enum class BoardTokenType { kMine, kPlanet, kShip, kStargate };
+
+#define MAX_DIRECTION 8
+enum class Direction { kNorth, kNorthEast, kEast, kSouthEast, kSouth, kSouthWest, kWest, kNorthWest };
+typedef int DIRECTION_ARRAY[MAX_DIRECTION];
 
 enum class PlayerRank { kCadet, kLieutenant, kCaptain,  kAdmiral};
 enum class PlayerTeam { kNeutral, kRed, kBlue };
@@ -32,14 +36,15 @@ class Utility {
     public:
         Utility();
 
+        static void log_state(const std::string& message) {}
+
         void log_debug(const std::string& message);
         void log_info(const std::string& message);
         void log_error(const std::string& message);
 
-        void generate_uuid(std::string *buffer);
+        static void generate_uuid(std::string *buffer);
 
-        int get_random_int(int limit);
-
+        static int get_random_int(int limit);
 };
 
 #endif

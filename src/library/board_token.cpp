@@ -17,5 +17,5 @@
 
 BoardToken::BoardToken() {
     std::cout << "board token\n";
-    next = NULL;
+
 }

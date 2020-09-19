@@ -28,20 +28,14 @@ BoardManager *BoardManager::get_instance() {
     return instance;
 }
 
-#if 0
-BoardManager::BoardManager() {
-    std::cout << "board manager\n";
-
-    planets = NULL;
-
-    //original_board();
-}
-#endif
-
-#if 0
 void BoardManager::generate_board() {
+    std::cout << "generate board\n";
+
     initialize_cells();
 
+    generate_stargates();
+
+#if 0
     std::string buffer;
     utility.generate_uuid(&buffer);
     std::cout << buffer << std::endl;
@@ -55,30 +49,32 @@ void BoardManager::generate_board() {
         printf("false false");
     }
 
-
-//    generate_stargates();
+#endif
 }
 
 void BoardManager::generate_stargates() {
-    add_stargate(0,  8,  9);
-    add_stargate(1,  8, 35);
-    add_stargate(2,  8, 64);
-    add_stargate(3, 35,  9);
-    add_stargate(4, 35, 35);
-    add_stargate(5, 35, 64);
-    add_stargate(6, 64,  9);
-    add_stargate(7, 64, 35);
-    add_stargate(8, 64, 64);
+    CatalogManager *catalog_manager = CatalogManager::get_instance();
+
+    for (int ndx = 0; ndx < 9; ndx++) {
+        Stargate *candidate = new Stargate(ndx);
+
+        int xx = candidate->get_location().getX();
+        int yy = candidate->get_location().getY();
+        std::cout << "target:" << xx << ":" << yy << std::endl;
+        std::cout << "aaa:" << candidate->get_id() << std::endl;
+
+        BoardCell *cell = &(board[yy][xx]);
+        std::cout << "cell:" << cell->get_location().getX() << std::endl;
+        cell->set_token(candidate);
+
+//        cell = board[yy][xx];
+
+//        BoardToken *token = board[yy][xx].get_token();
+//        std::cout << "zzz:" << token->get_id() << std::endl;
+
+        // add to catalog
+    }
 }
-#endif
-
-#if 0
-void BoardManager::add_stargate(int ndx, int yy, int xx) {
-    Stargate *candidate = new Stargate(yy, xx);
-
-    //board[yy][xx].set_type(BoardCellType::kStargate);
-}
-
 
 void BoardManager::initialize_cells() {
     for (int yy = 0; yy < MAX_BOARD_SIDE_Y; yy++) {
@@ -88,6 +84,10 @@ void BoardManager::initialize_cells() {
     }
 }
 
+
+///////// kill below
+
+#if 0
 void BoardManager::service_event_loop() {
     std::cout << "service_event_loop\n";
 }

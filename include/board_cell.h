@@ -21,20 +21,28 @@
 class BoardCell {
     Location location;
     BoardToken *root;
-    bool is_void;
-
-    BoardCellType bct;
-    PlayerTeam team;
+    bool black_hole_flag;
+    bool void_flag;
 
     public:
         BoardCell();
 
-        void initialize(int yy, int xx) {location.setYX(yy, xx);}
+        void initialize(int yy, int xx);
 
-        bool is_empty() {if (root == NULL) {return true;} else {return false;}}
+        bool is_occupied() {if (root == NULL) {return false;} else {return true;}}
 
-        void set_type(BoardCellType arg);
+        bool is_black_hole() {return black_hole_flag;}
+        void set_black_hole(bool arg) {black_hole_flag = arg;}
+
+        bool is_void() {return void_flag;}
+        void set_void(bool arg) {void_flag = arg;}
+
         char to_ascii();
+
+        Location get_location() {return location;}
+
+        BoardToken *get_token() {return root;}
+        void set_token(BoardToken *arg) {root = arg;}
 };
 
 #endif

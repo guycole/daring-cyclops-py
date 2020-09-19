@@ -25,11 +25,10 @@ CatalogManager *CatalogManager::get_instance() {
     return instance;
 }
 
-#if 0
-CatalogManager::CatalogManager() {
-    std::cout << "catalog manager\n";
+int CatalogManager::add_stargate(Stargate *arg) {
+
+    return ERROR_NONE;
 }
-#endif
 
 int CatalogManager::add_player(Player arg, std::string *id) {
     CatalogItem cat_item;

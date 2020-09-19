@@ -11,6 +11,7 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include "location.h"
 #include "utility.h"
 
 #include <string>
@@ -19,37 +20,16 @@
 #define BOARD_TOKEN_H_
 
 class BoardToken {
-    BoardToken *next;
-
-#if 0
-    //
-    int warp_engines;
-    int impulse_engines;
-    int photon_torpedo_tubes;
-    int phaser_banks;
-    int deflector_shields;
-    int computer;
-    int life_support;
-    int radio;
-    int tractor_beam;
-
-    char *name;
-
-    static const std::string kBlueScouts[];
-    static const std::string kBlueFighters[];
-    static const std::string kBlueMiners[];
-    static const std::string kBlueFlagships[];
-
-    static const std::string kRedScouts[];
-    static const std::string kRedFighters[];
-    static const std::string kRedMiners[];
-    static const std::string kRedFlagships[];
-
-    void get_ship_name(char *results, PlayerTeam team, ShipType ship_type);
-#endif
+    protected:
+        std::string id; // UUID
+        Location location;
 
     public:
         BoardToken();
+
+        Location get_location() { return location; }
+
+        std::string get_id() { return id; }
 };
 
 #endif
