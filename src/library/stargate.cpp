@@ -24,7 +24,7 @@ Stargate::Stargate(int ndx) {
 
     btt = BoardTokenType::kStargate;
 
-    utility.generate_uuid(&id);
+    Utility::generate_uuid(&id);
     std::cout << "id:" << gate_id << ":" << id << std::endl;
 
     get_location_for_stargate(ndx, &location);

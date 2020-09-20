@@ -48,8 +48,6 @@ class Stargate: public BoardToken {
     DIRECTION_ARRAY stargate_routes_ndx7 = { 4,  5, 8,  3,  1,  5,  6,  3 };
     DIRECTION_ARRAY stargate_routes_ndx8 = { 5, -1, 6,  0,  2, -1,  7,  4 };
 
-    Utility utility;
-
     public:
         Stargate(int ndx);
 };

@@ -13,7 +13,6 @@
 */
 #include "board_token.h"
 #include "location.h"
-#include "utility.h"
 
 #ifndef BOARD_CELL_H_
 #define BOARD_CELL_H_

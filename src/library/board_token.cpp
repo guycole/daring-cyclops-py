@@ -14,5 +14,3 @@
 #include "board_token.h"
 
 #include <iostream>
-
-BoardToken::BoardToken() { }

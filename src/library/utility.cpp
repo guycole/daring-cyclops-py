@@ -13,6 +13,8 @@
 #include <iostream>
 #include <string>
 
+#include <string.h>
+
 #include "utility.h"
 
 Utility::Utility() {
@@ -38,7 +40,7 @@ void Utility::generate_uuid(std::string *buffer) {
     uuid_generate(candidate);
     uuid_unparse(candidate, temp);
 
-    *buffer = temp;
+    buffer->assign(temp, strlen(temp));
 }
 
 int Utility::get_random_int(int limit) {

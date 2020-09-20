@@ -11,34 +11,31 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include <iostream>
-
 #include "board_manager.h"
 #include "catalog_manager.h"
 #include "player_manager.h"
 #include "ship_manager.h"
-#include "utility.h"
 
 #ifndef CYCLOPS_H_
 #define CYCLOPS_H_
 
+#define VERSION_MAJOR 0
+#define VERSION_MINOR 0
+
 class Cyclops {
-    BoardManager *board_manager;
-//    CatalogManager *catalog_manager;
-//    PlayerManager player_manager;
-//    ShipManager ship_manager;
-    Utility utility;
+    std::string id; // UUID
 
     public:
         Cyclops();
         ~Cyclops() {}
 
-        void generate_game();
+        std::string get_id() {return id;}
 
-//        void scenario1();
+        void get_version(std::string *buffer);
 
-//        void run_event_loop();
-//        void run_json_command();
+        void game_play();
+        void game_post();
+        void game_prepare();
 };
 
 #endif

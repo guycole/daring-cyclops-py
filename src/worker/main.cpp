@@ -20,9 +20,18 @@ int main(int argc, char *argv[]) {
     std::cout << "main main\n";
 
     Cyclops *cyclops = new Cyclops();
-    cyclops->generate_game();
 
-//    cyclops.scenario1();
+    std::string version;
+    cyclops->get_version(&version);
+    std::cout << version << std::endl;
+
+    std::cout << "game id:" << cyclops->get_id() << std::endl;
+
+    cyclops->game_prepare();
+
+    cyclops->game_play();
+
+    cyclops->game_post();
 
     return 0;
 }

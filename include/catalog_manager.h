@@ -37,13 +37,14 @@ class CatalogManager {
     public:
         static CatalogManager *get_instance();
 
-        int add_player(Player arg, std::string *id);
+        int add_planet(Planet *arg);
         int add_ship(Ship arg, std::string *id);
         int add_stargate(Stargate *arg);
 
         int get_player(const std::string& id);
+        int get_planet(const std::string& id, Planet *selected);
         int get_ship(const std::string& id);
-        int get_stargate(const std::string& id);
+        int get_stargate(const std::string& id, Stargate *selected);
 };
 
 #endif

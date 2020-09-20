@@ -11,42 +11,37 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
-#include <chrono>
-#include <iostream>
-#include <random>
+#include <string.h>
+#include <stdlib.h>
 
-//#include "aws_utility.h"
 #include "cyclops.h"
+#include "utility.h"
 
 Cyclops::Cyclops() {
-    std::cout << "cyclops\n";
-
     srand((unsigned) time(NULL));
+    Utility::generate_uuid(&id);
+}
 
-    board_manager = BoardManager::get_instance();
+void Cyclops::get_version(std::string *result) {
+    char buffer[64];
+    snprintf(buffer, sizeof(buffer), "daring-cyclops worker %d.%d compiled on %s at %s", VERSION_MAJOR, VERSION_MINOR, __DATE__, __TIME__);
+    result->assign(buffer, strlen(buffer));
+}
+
+void Cyclops::game_prepare() {
+    BoardManager *board_manager = BoardManager::get_instance();
     board_manager->generate_board();
-
-/*
-    utility.log_debug("ryryr");
-    utility.log_info("ryryr");
-    utility.log_error("ryryr");
-*/
-//    board_manager.dump_board();
-
-//    board_manager.service_event_loop();
-
-    //board_manager = BoardManager();
-    //utility = Utility();
-
-    //player_manager = PlayerManager();
-    //player_manager.add_new_player();
 }
 
-void Cyclops::generate_game() {
-//    utility.log_info("generate game");
-
-//    board_manager.generate_board();
+void Cyclops::game_post() {
+    // TODO
 }
+
+void Cyclops::game_play() {
+    // TODO
+}
+
+////////// kill below
 
 //void Cyclops::scenario1() {
 #if 0

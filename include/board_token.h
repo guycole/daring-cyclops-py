@@ -2,7 +2,7 @@
 ** Title:board_token.h
 **
 ** Description:
-**  board token
+**  board token pointed to by board cell
 **
 ** Development Environment:
 **   Ubuntu 18.04.3 LTS (Bionic Beaver)
@@ -12,12 +12,13 @@
 **   G.S. Cole (guycole at gmail dot com)
 */
 #include "location.h"
-#include "utility.h"
 
 #include <string>
 
 #ifndef BOARD_TOKEN_H_
 #define BOARD_TOKEN_H_
+
+enum class BoardTokenType { kUnknown, kMine, kPlanet, kShip, kStargate };
 
 class BoardToken {
     protected:
@@ -26,7 +27,7 @@ class BoardToken {
         Location location;
 
     public:
-        BoardToken();
+        BoardToken() {}
 
         BoardTokenType get_type() { return btt; }
 

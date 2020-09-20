@@ -14,18 +14,3 @@
 #include "catalog_item.h"
 
 #include <iostream>
-
-CatalogItem::CatalogItem() {
-    std::cout << "catalog item\n";
-}
-
-void CatalogItem::set_planet() {
-
-
-    utility.generate_uuid(&id);
-    std::cout << id << std::endl;
-}
-
-void CatalogItem::set_ship() {
-
-}

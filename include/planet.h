@@ -13,26 +13,21 @@
 */
 #include <string>
 
-#include "utility.h"
+#include "board_token.h"
 
 #ifndef PLANET_H_
 #define PLANET_H_
 
-class Planet {
-    int xx; //board cell location
-    int yy; //board cell location
-    PlayerTeam team; //planet affiliation
-    Planet *next; // single linked list
+#define MAX_PLANETS 255
 
+class Planet: public BoardToken {
     char *name;
+    int planet_id; // planets are 0 to 255, for diagnostics only
 
-    Utility utility;
+    void get_location_for_planet(int ndx, Location *result);
 
     public:
-        Planet(int yy, int xx);
-
-        void set_next(Planet *arg) {next = arg;}
-        Planet *get_next() {return next;}
+        Planet(int ndx);
 };
 
 #endif

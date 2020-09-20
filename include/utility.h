@@ -20,8 +20,6 @@
 
 #define MAX_LENGTH_UUID 48
 
-enum class BoardTokenType { kMine, kPlanet, kShip, kStargate, kUnknown };
-
 #define MAX_DIRECTION 8
 enum class Direction { kNorth, kNorthEast, kEast, kSouthEast, kSouth, kSouthWest, kWest, kNorthWest };
 typedef int DIRECTION_ARRAY[MAX_DIRECTION];

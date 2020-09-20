@@ -17,7 +17,7 @@
 
 class BoardCell {
 
-    enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
+    //enum class BoardCellType { kMine, kPlanet, kSpace, kStargate, kVoid };
 
     public:
         BoardCell();

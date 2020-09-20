@@ -28,30 +28,35 @@ void BoardCell::initialize(int yy, int xx) {
 //////////
 
 char BoardCell::to_ascii() {
-#if 0
-    switch (bct) {
-        case BoardCellType::kBlackhole:
-            return 'B';
-            break;
-        case BoardCellType::kMine:
+    if (is_black_hole()) {
+        return 'H';
+    }
+
+//    if (is_void()) {
+//        return ' ';
+//    }
+
+    if (root == NULL) {
+        return '.';
+    }
+
+    switch (root->get_type()) {
+        case BoardTokenType::kMine:
             return '#';
             break;
-        case BoardCellType::kPlanet:
+        case BoardTokenType::kPlanet:
             return '*';
             break;
-        case BoardCellType::kShip:
+        case BoardTokenType::kShip:
             return 'S';
             break;
-        case BoardCellType::kSpace:
-            return '.';
-            break;
-        case BoardCellType::kStargate:
+        case BoardTokenType::kStargate:
             return 'X';
             break;
-        case BoardCellType::kVoid:
-            return ' ';
+        case BoardTokenType::kUnknown:
+            return 'U';
             break;
     }
-#endif
+
     return 'V';
 }

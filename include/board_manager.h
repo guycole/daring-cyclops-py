@@ -31,15 +31,13 @@ class BoardManager {
 
     BoardCell board[MAX_BOARD_SIDE_Y][MAX_BOARD_SIDE_Y];
 
+    void generate_planets();
     void generate_stargates();
-
-/////////
-
-    Planet *planets;
-    Stargate *stargates;
+    void generate_voids();
 
     void initialize_cells();
 
+//
     Utility utility;
 
     /////
@@ -58,9 +56,7 @@ class BoardManager {
 
         void generate_board();
 
-/////
-
-//        void dump_board();
+        void dump_board();
 //        void service_event_loop();
 };
 
