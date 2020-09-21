@@ -1,5 +1,5 @@
 /*
-** Title:planetcpp
+** Title:planet.cpp
 **
 ** Description:
 **  planet

@@ -64,6 +64,10 @@ json_command.o: json_command.cpp \
  /home/gsc/daring-cyclops/include/board_token.h \
  /home/gsc/daring-cyclops/include/location.h
 location.o: location.cpp /home/gsc/daring-cyclops/include/location.h
+mine.o: mine.cpp /home/gsc/daring-cyclops/include/mine.h \
+ /home/gsc/daring-cyclops/include/board_token.h \
+ /home/gsc/daring-cyclops/include/location.h \
+ /home/gsc/daring-cyclops/include/utility.h
 output_manager.o: output_manager.cpp output_manager.h
 planet.o: planet.cpp /home/gsc/daring-cyclops/include/planet.h \
  /home/gsc/daring-cyclops/include/board_token.h \

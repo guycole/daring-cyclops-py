@@ -11,6 +11,7 @@
 ** Author:
 **   G.S. Cole (guycole at gmail dot com)
 */
+#include <iostream>
 #include <string.h>
 #include <stdlib.h>
 
@@ -38,7 +39,13 @@ void Cyclops::game_post() {
 }
 
 void Cyclops::game_play() {
-    // TODO
+    char buffer[64];
+
+    std::cout << "game play" << std::endl;
+    std::cout << "command:";
+    std::cin >> buffer;
+//    std::cout << std::endl;
+    std::cout << buffer << std::endl;
 }
 
 ////////// kill below
