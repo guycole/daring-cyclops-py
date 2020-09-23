@@ -1,0 +1,476 @@
+/home/gsc/.gdbinit:4: Error in sourced command file:
+a.out: No such file or directory.
+Reading symbols from worker...done.
+/home/gsc/.gdbinit:4: Error in sourced command file:
+daring-cyclops/bin/worker: No such file or directory.
+Reading symbols from worker...done.
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+/home/gsc/.gdbinit:6: Error in sourced command file:
+Argument required (one or more breakpoint numbers).
+Reading symbols from worker...done.
+6	**
+7	** Development Environment:
+8	**   Ubuntu 18.04.3 LTS (Bionic Beaver)
+9	**   gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1-18.04)
+10	**
+11	** Author:
+12	**   G.S. Cole (guycole at gmail dot com)
+13	*/
+14	#include <uuid/uuid.h>
+15	#include <iostream>
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+/home/gsc/.gdbinit:6: Error in sourced command file:
+Argument required (one or more breakpoint numbers).
+6	**
+7	** Development Environment:
+8	**   Ubuntu 18.04.3 LTS (Bionic Beaver)
+9	**   gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1-18.04)
+10	**
+11	** Author:
+12	**   G.S. Cole (guycole at gmail dot com)
+13	*/
+14	#include <uuid/uuid.h>
+15	#include <iostream>
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+6	**
+7	** Development Environment:
+8	**   Ubuntu 18.04.3 LTS (Bionic Beaver)
+9	**   gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1-18.04)
+10	**
+11	** Author:
+12	**   G.S. Cole (guycole at gmail dot com)
+13	*/
+14	#include <uuid/uuid.h>
+15	#include <iostream>
+16	
+17	#include "cyclops.h"
+18	
+19	int main(int argc, char *argv[]) {
+20	    std::cout << "main main\n";
+21	
+22	    Cyclops *cyclops = new Cyclops();
+23	    cyclops->generate_game();
+24	
+25	//    cyclops.scenario1();
+26	
+27	    return 0;
+28	}
+You can't do that when your target is `exec'
+Breakpoint 1 at 0x1398: file main.cpp, line 23.
+Starting program: /home/gsc/daring-cyclops/bin/worker 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main (argc=1, argv=0x7ffd09185338) at main.cpp:23
+23	    cyclops->generate_game();
+Cyclops::generate_game (this=0x557f5120f280) at cyclops.cpp:49
+49	}
+main (argc=1, argv=0x7ffd09185338) at main.cpp:27
+27	    return 0;
+28	}
+__libc_start_main (main=0x557f4f57f35a <main(int, char**)>, argc=1, argv=0x7ffd09185338, init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, stack_end=0x7ffd09185328) at ../csu/libc-start.c:344
+344	../csu/libc-start.c: No such file or directory.
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+Not confirmed.
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+All defined variables:
+
+File /usr/include/c++/7/bits/basic_string.h:
+const std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::size_type std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::npos;
+
+File /usr/include/c++/7/bits/random.h:
+const std::size_t std::mersenne_twister_engine<unsigned long, 32, 624, 397, 31, 2567483615, 11, 4294967295, 7, 2636928640, 15, 4022730752, 18, 1812433253>::state_size;
+const std::size_t std::mersenne_twister_engine<unsigned long, 32ul, 624ul, 397ul, 31ul, 2567483615ul, 11ul, 4294967295ul, 7ul, 2636928640ul, 15ul, 4022730752ul, 18ul, 1812433253ul>::state_size;
+
+File /usr/include/c++/7/bits/stl_pair.h:
+static const std::piecewise_construct_t std::piecewise_construct;
+
+File /usr/include/c++/7/bits/uses_allocator.h:
+static const std::allocator_arg_t std::allocator_arg;
+
+File /usr/include/c++/7/ext/numeric_traits.h:
+const int __gnu_cxx::__numeric_traits_floating<double>::__max_exponent10;
+const int __gnu_cxx::__numeric_traits_floating<float>::__max_exponent10;
+const int __gnu_cxx::__numeric_traits_floating<long double>::__max_exponent10;
+const char __gnu_cxx::__numeric_traits_integer<char>::__max;
+const int __gnu_cxx::__numeric_traits_integer<int>::__max;
+const int __gnu_cxx::__numeric_traits_integer<int>::__min;
+const long __gnu_cxx::__numeric_traits_integer<long>::__max;
+const long __gnu_cxx::__numeric_traits_integer<long>::__min;
+const short __gnu_cxx::__numeric_traits_integer<short>::__max;
+const short __gnu_cxx::__numeric_traits_integer<short>::__min;
+const int __gnu_cxx::__numeric_traits_integer<unsigned long>::__digits;
+
+File /usr/include/c++/7/iostream:
+static std::ios_base::Init std::__ioinit;
+
+File /usr/include/c++/7/ratio:
+const intmax_t std::ratio<1, 1000000000>::den;
+const intmax_t std::ratio<1, 1000000000>::num;
+const intmax_t std::ratio<1, 1000000>::den;
+const intmax_t std::ratio<1, 1000000>::num;
+const intmax_t std::ratio<1, 1000>::den;
+const intmax_t std::ratio<1, 1000>::num;
+const intmax_t std::ratio<1, 1>::den;
+const intmax_t std::ratio<1, 1>::num;
+const intmax_t std::ratio<1, 3600>::den;
+const intmax_t std::ratio<1, 3600>::num;
+const intmax_t std::ratio<1, 60>::den;
+const intmax_t std::ratio<1, 60>::num;
+const intmax_t std::ratio<1000, 1>::den;
+const intmax_t std::ratio<1000, 1>::num;
+const intmax_t std::ratio<1000000, 1>::den;
+const intmax_t std::ratio<1000000, 1>::num;
+const intmax_t std::ratio<1000000000, 1>::den;
+const intmax_t std::ratio<1000000000, 1>::num;
+const intmax_t std::ratio<1000000000l, 1l>::den;
+const intmax_t std::ratio<1000000000l, 1l>::num;
+const intmax_t std::ratio<1000000l, 1l>::den;
+const intmax_t std::ratio<1000000l, 1l>::num;
+const intmax_t std::ratio<1000l, 1l>::den;
+const intmax_t std::ratio<1000l, 1l>::num;
+const intmax_t std::ratio<1l, 1000000000l>::den;
+const intmax_t std::ratio<1l, 1000000000l>::num;
+const intmax_t std::ratio<1l, 1000000l>::den;
+const intmax_t std::ratio<1l, 1000000l>::num;
+const intmax_t std::ratio<1l, 1000l>::den;
+const intmax_t std::ratio<1l, 1000l>::num;
+const intmax_t std::ratio<1l, 1l>::den;
+const intmax_t std::ratio<1l, 1l>::num;
+const intmax_t std::ratio<1l, 3600l>::den;
+const intmax_t std::ratio<1l, 3600l>::num;
+const intmax_t std::ratio<1l, 60l>::den;
+const intmax_t std::ratio<1l, 60l>::num;
+const intmax_t std::ratio<3600, 1>::den;
+const intmax_t std::ratio<3600, 1>::num;
+const intmax_t std::ratio<3600l, 1l>::den;
+const intmax_t std::ratio<3600l, 1l>::num;
+const intmax_t std::ratio<60, 1>::den;
+const intmax_t std::ratio<60, 1>::num;
+const intmax_t std::ratio<60l, 1l>::den;
+const intmax_t std::ratio<60l, 1l>::num;
+
+File /usr/include/c++/7/tuple:
+static const std::_Swallow_assign std::ignore;
+
+File /usr/include/c++/7/type_traits:
+const bool std::integral_constant<bool, false>::value;
+const bool std::integral_constant<bool, true>::value;
+const long std::integral_constant<long, 1000000000l>::value;
+const long std::integral_constant<long, 1000000l>::value;
+const long std::integral_constant<long, 1000l>::value;
+const long std::integral_constant<long, 1l>::value;
+const long std::integral_constant<long, 3600l>::value;
+const long std::integral_constant<long, 60l>::value;
+const unsigned long std::integral_constant<unsigned long, 0ul>::value;
+
+File board_manager.cpp:
+BoardManager *BoardManager::instance;
+
+File catalog_manager.cpp:
+CatalogManager *CatalogManager::instance;
+
+Non-debugging symbols:
+0x0000000000002e80  _IO_stdin_used
+0x0000000000002f80  typeinfo name for std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*
+0x0000000000002fc0  typeinfo name for std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >
+0x0000000000003020  __GNU_EH_FRAME_HDR
+0x0000000000003c5c  __FRAME_END__
+0x0000000000204c40  __frame_dummy_init_array_entry
+0x0000000000204c40  __init_array_start
+0x0000000000204c90  __do_global_dtors_aux_fini_array_entry
+0x0000000000204c90  __init_array_end
+0x0000000000204c98  typeinfo for std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >*
+0x0000000000204cb8  typeinfo for std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >
+0x0000000000204cc8  _DYNAMIC
+0x0000000000204ee8  _GLOBAL_OFFSET_TABLE_
+0x0000000000205000  __data_start
+0x0000000000205000  data_start
+0x0000000000205010  DW.ref.__gxx_personality_v0
+0x0000000000205018  __TMC_END__
+0x0000000000205018  __bss_start
+0x0000000000205018  _edata
+0x0000000000205020  std::cout@@GLIBCXX_3.4
+0x0000000000205130  completed
+0x0000000000205158  _end
+Function "board_manager" not defined.
+6	**
+7	** Development Environment:
+8	**   Ubuntu 18.04.3 LTS (Bionic Beaver)
+9	**   gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1-18.04)
+10	**
+11	** Author:
+12	**   G.S. Cole (guycole at gmail dot com)
+13	*/
+14	#include <uuid/uuid.h>
+15	#include <iostream>
+16	
+17	#include "cyclops.h"
+18	
+19	int main(int argc, char *argv[]) {
+20	    std::cout << "main main\n";
+21	
+22	    Cyclops *cyclops = new Cyclops();
+23	    cyclops->generate_game();
+24	
+25	//    cyclops.scenario1();
+Breakpoint 1 at 0x137f: file main.cpp, line 22.
+Starting program: /home/gsc/daring-cyclops/bin/worker 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main (argc=1, argv=0x7ffcd4e19e38) at main.cpp:22
+22	    Cyclops *cyclops = new Cyclops();
+23	    cyclops->generate_game();
+Function "f" not defined.
+Make breakpoint pending on future shared library load? (y or [n]) [answered N; input not from terminal]
+6	**
+7	** Development Environment:
+8	**   Ubuntu 18.04.3 LTS (Bionic Beaver)
+9	**   gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1-18.04)
+10	**
+11	** Author:
+12	**   G.S. Cole (guycole at gmail dot com)
+13	*/
+14	#include <uuid/uuid.h>
+15	#include <iostream>
+16	
+17	#include "cyclops.h"
+18	
+19	int main(int argc, char *argv[]) {
+20	    std::cout << "main main\n";
+21	
+22	    Cyclops *cyclops = new Cyclops();
+23	    cyclops->generate_game();
+24	
+25	//    cyclops.scenario1();
+26	
+27	    return 0;
+28	}
+Breakpoint 1 at 0x137f: file main.cpp, line 22.
+Starting program: /home/gsc/daring-cyclops/bin/worker 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main (argc=1, argv=0x7ffddd6d74d8) at main.cpp:22
+22	    Cyclops *cyclops = new Cyclops();
+Cyclops::Cyclops (this=0x561a5bcc7280) at cyclops.cpp:21
+21	Cyclops::Cyclops() {
+22	    std::cout << "cyclops\n";
+17	
+18	//#include "aws_utility.h"
+19	#include "cyclops.h"
+20	
+21	Cyclops::Cyclops() {
+22	    std::cout << "cyclops\n";
+23	
+24	    srand((unsigned) time(NULL));
+25	
+26	    board_manager = BoardManager::get_instance();
+27	    board_manager->generate_board();
+28	
+29	/*
+30	    utility.log_debug("ryryr");
+31	    utility.log_info("ryryr");
+32	    utility.log_error("ryryr");
+33	*/
+34	//    board_manager.dump_board();
+35	
+36	//    board_manager.service_event_loop();
+Breakpoint 2 at 0x561a5baaf47d: file cyclops.cpp, line 27.
+Continuing.
+
+Breakpoint 2, Cyclops::Cyclops (this=0x561a5bcc7280) at cyclops.cpp:27
+27	    board_manager->generate_board();
+BoardManager::generate_board (this=0x7f050a845010) at board_manager.cpp:32
+warning: Source file is more recent than executable.
+32	    std::cout << "generate board\n";
+34	    initialize_cells();
+36	    generate_stargates();
+Undefined info command: "board_manager".  Try "help info".
+"info" must be followed by the name of an info command.
+List of info subcommands:
+
+info address -- Describe where symbol SYM is stored
+info all-registers -- List of all registers and their contents
+info args -- Argument variables of current stack frame
+info auto-load -- Print current status of auto-loaded files
+info auxv -- Display the inferior's auxiliary vector
+info bookmarks -- Status of user-settable bookmarks
+info breakpoints -- Status of specified breakpoints (all user-settable breakpoints if no argument)
+info checkpoints -- IDs of currently known checkpoints
+info classes -- All Objective-C classes
+info common -- Print out the values contained in a Fortran COMMON block
+info copying -- Conditions for redistributing copies of GDB
+info dcache -- Print information on the dcache performance
+info display -- Expressions to display when program stops
+info exceptions -- List all Ada exception names
+info extensions -- All filename extensions associated with a source language
+info files -- Names of targets and files being debugged
+info float -- Print the status of the floating point unit
+info frame -- All about selected stack frame
+info frame-filter -- List all registered Python frame-filters
+info functions -- All function names
+info guile -- Prefix command for Guile info displays
+info handle -- What debugger does when program gets various signals
+info inferiors -- IDs of specified inferiors (all inferiors if no argument)
+info line -- Core addresses of the code for a source line
+info locals -- Local variables of current stack frame
+info macro -- Show the definition of MACRO
+info macros -- Show the definitions of all macros at LINESPEC
+info mem -- Memory region attributes
+info os -- Show OS data ARG
+info pretty-printer -- GDB command to list all registered pretty-printers
+info probes -- Show available static probes
+info proc -- Show /proc process information about any running process
+info program -- Execution status of the program
+info record -- Info record options
+info registers -- List of integer registers and their contents
+info scope -- List the variables local to a scope
+info selectors -- All Objective-C selectors
+info set -- Show all GDB settings
+info sharedlibrary -- Status of loaded shared object libraries
+info signals -- What debugger does when program gets various signals
+info skip -- Display the status of skips
+info source -- Information about the current source file
+info sources -- Source files in the program
+info stack -- Backtrace of the stack
+info static-tracepoint-markers -- List target static tracepoints markers
+info symbol -- Describe what symbol is at location ADDR
+info target -- Names of targets and files being debugged
+info tasks -- Provide information about all known Ada tasks
+info terminal -- Print inferior's saved terminal status
+info threads -- Display currently known threads
+info tracepoints -- Status of specified tracepoints (all tracepoints if no argument)
+info tvariables -- Status of trace state variables and their values
+info type-printers -- GDB command to list all registered type-printers
+info types -- All type names
+info unwinder -- GDB command to list unwinders
+info variables -- All global and static variable names
+info vector -- Print the status of the vector unit
+info vtbl -- Show the virtual function table for a C++ object
+info warranty -- Various kinds of warranty you do not have
+info watchpoints -- Status of specified watchpoints (all watchpoints if no argument)
+info win -- List of all displayed windows
+info xmethod -- GDB command to list registered xmethod matchers
+
+Type "help info" followed by info subcommand name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+No symbol "board_manager" in current context.
+"info" must be followed by the name of an info command.
+List of info subcommands:
+
+info address -- Describe where symbol SYM is stored
+info all-registers -- List of all registers and their contents
+info args -- Argument variables of current stack frame
+info auto-load -- Print current status of auto-loaded files
+info auxv -- Display the inferior's auxiliary vector
+info bookmarks -- Status of user-settable bookmarks
+info breakpoints -- Status of specified breakpoints (all user-settable breakpoints if no argument)
+info checkpoints -- IDs of currently known checkpoints
+info classes -- All Objective-C classes
+info common -- Print out the values contained in a Fortran COMMON block
+info copying -- Conditions for redistributing copies of GDB
+info dcache -- Print information on the dcache performance
+info display -- Expressions to display when program stops
+info exceptions -- List all Ada exception names
+info extensions -- All filename extensions associated with a source language
+info files -- Names of targets and files being debugged
+info float -- Print the status of the floating point unit
+info frame -- All about selected stack frame
+info frame-filter -- List all registered Python frame-filters
+info functions -- All function names
+info guile -- Prefix command for Guile info displays
+info handle -- What debugger does when program gets various signals
+info inferiors -- IDs of specified inferiors (all inferiors if no argument)
+info line -- Core addresses of the code for a source line
+info locals -- Local variables of current stack frame
+info macro -- Show the definition of MACRO
+info macros -- Show the definitions of all macros at LINESPEC
+info mem -- Memory region attributes
+info os -- Show OS data ARG
+info pretty-printer -- GDB command to list all registered pretty-printers
+info probes -- Show available static probes
+info proc -- Show /proc process information about any running process
+info program -- Execution status of the program
+info record -- Info record options
+info registers -- List of integer registers and their contents
+info scope -- List the variables local to a scope
+info selectors -- All Objective-C selectors
+info set -- Show all GDB settings
+info sharedlibrary -- Status of loaded shared object libraries
+info signals -- What debugger does when program gets various signals
+info skip -- Display the status of skips
+info source -- Information about the current source file
+info sources -- Source files in the program
+info stack -- Backtrace of the stack
+info static-tracepoint-markers -- List target static tracepoints markers
+info symbol -- Describe what symbol is at location ADDR
+info target -- Names of targets and files being debugged
+info tasks -- Provide information about all known Ada tasks
+info terminal -- Print inferior's saved terminal status
+info threads -- Display currently known threads
+info tracepoints -- Status of specified tracepoints (all tracepoints if no argument)
+info tvariables -- Status of trace state variables and their values
+info type-printers -- GDB command to list all registered type-printers
+info types -- All type names
+info unwinder -- GDB command to list unwinders
+info variables -- All global and static variable names
+info vector -- Print the status of the vector unit
+info vtbl -- Show the virtual function table for a C++ object
+info warranty -- Various kinds of warranty you do not have
+info watchpoints -- Status of specified watchpoints (all watchpoints if no argument)
+info win -- List of all displayed windows
+info xmethod -- GDB command to list registered xmethod matchers
+
+Type "help info" followed by info subcommand name for full documentation.
+Type "apropos word" to search for commands related to "word".
+Command name abbreviations are allowed if unambiguous.
+No locals.
+31	void BoardManager::generate_board() {
+32	    std::cout << "generate board\n";
+33	
+34	    initialize_cells();
+35	
+36	    generate_stargates();
+37	
+38	#if 0
+39	    std::string buffer;
+40	    utility.generate_uuid(&buffer);
+BoardManager::generate_stargates (this=0x7f050a845010) at board_manager.cpp:55
+55	void BoardManager::generate_stargates() {
+56	    CatalogManager *catalog_manager = CatalogManager::get_instance();
+58	    for (int ndx = 0; ndx < 9; ndx++) {
+59	        Stargate *candidate = new Stargate(ndx);
+62	        int yy = candidate->get_location().getY();
+Invalid character ';' in expression.
+$1 = (Stargate *) 0x561a5bcc72e0
+$2 = {<BoardToken> = {id = "5f8bead2-8800-4e4f-9abe-cbfa11b3e7b3", location = {xx = 9, yy = 8}}, damage = 0, energy = 100, source = {{xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}}, destination = {{xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}}, stargate_routes_ndx0 = {6, -1, 1, 4, 3, -1, 2, 8}, stargate_routes_ndx1 = {7, 3, 2, 5, 4, 3, 0, 5}, stargate_routes_ndx2 = {8, 6, 0, -1, 5, 4, 1, -1}, stargate_routes_ndx3 = {0, 1, 4, 7, 6, 1, 5, 8}, stargate_routes_ndx4 = {1, 2, 5, 8, 7, 6, 3, 0}, stargate_routes_ndx5 = {2, 7, 3, 1, 8, 7, 4, 1}, stargate_routes_ndx6 = {3, 4, 7, -1, 0, 2, 8, -1}, stargate_routes_ndx7 = {4, 5, 8, 3, 1, 5, 6, 3}, stargate_routes_ndx8 = {5, -1, 6, 0, 2, -1, 7, 4}, utility = {<No data fields>}}
+63	        std::cout << "target:" << xx << ":" << yy << std::endl;
+64	        std::cout << "aaa:" << candidate->get_id() << std::endl;
+65	
+67	        std::cout << "cell:" << cell->get_location() << std::endl;
+$3 = (BoardCell *) 0x7ffddd6d7340
+$4 = {location = {xx = 36, yy = 0}, root = 0x561a5baaf91f <BoardManager::initialize_cells()+97>, black_hole_flag = false, void_flag = false}
+58	    for (int ndx = 0; ndx < 9; ndx++) {
+59	        Stargate *candidate = new Stargate(ndx);
+62	        int yy = candidate->get_location().getY();
+$5 = {<BoardToken> = {id = "de93500f-1cf7-4fd6-9adc-1f8fd9783751", location = {xx = 35, yy = 8}}, damage = 0, energy = 100, source = {{xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}}, destination = {{xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}, {xx = 0, yy = 0}}, stargate_routes_ndx0 = {6, -1, 1, 4, 3, -1, 2, 8}, stargate_routes_ndx1 = {7, 3, 2, 5, 4, 3, 0, 5}, stargate_routes_ndx2 = {8, 6, 0, -1, 5, 4, 1, -1}, stargate_routes_ndx3 = {0, 1, 4, 7, 6, 1, 5, 8}, stargate_routes_ndx4 = {1, 2, 5, 8, 7, 6, 3, 0}, stargate_routes_ndx5 = {2, 7, 3, 1, 8, 7, 4, 1}, stargate_routes_ndx6 = {3, 4, 7, -1, 0, 2, 8, -1}, stargate_routes_ndx7 = {4, 5, 8, 3, 1, 5, 6, 3}, stargate_routes_ndx8 = {5, -1, 6, 0, 2, -1, 7, 4}, utility = {<No data fields>}}
+63	        std::cout << "target:" << xx << ":" << yy << std::endl;
+64	        std::cout << "aaa:" << candidate->get_id() << std::endl;
+65	
+$6 = (BoardCell *) 0x7f050a848928
+$7 = {location = {xx = 9, yy = 8}, root = 0x0, black_hole_flag = false, void_flag = false}
+67	        std::cout << "cell:" << cell->get_location() << std::endl;
+58	    for (int ndx = 0; ndx < 9; ndx++) {
+59	        Stargate *candidate = new Stargate(ndx);
+62	        int yy = candidate->get_location().getY();
+63	        std::cout << "target:" << xx << ":" << yy << std::endl;
+64	        std::cout << "aaa:" << candidate->get_id() << std::endl;
+65	
+67	        std::cout << "cell:" << cell->get_location() << std::endl;
+58	    for (int ndx = 0; ndx < 9; ndx++) {
+No symbol "cell" in current context.

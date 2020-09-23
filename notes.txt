@@ -1,10 +1,8 @@
-json input sqs
+k8s/docker deploy
 
-output, up to 10 users
+no aws services
 
-dedicated sqs queue?
+rabbitmq
 
-associate queue when creating user
-
-web rtc?
+UI = django
 

@@ -13,81 +13,15 @@
 # Author:
 #   G.S. Cole (guycole at gmail dot com)
 #
+DOCKER = docker
+DARING_CYCLOPS_MANAGER = daring-cyclops-manager
+DARING_CYCLOPS_WORKER = daring-cyclops-worker
 
-#
-# Directories.
-#
-DEVDIR = $(HOME)/daring-cyclops
-INCDIR = $(DEVDIR)/include
-LIBDIR = $(DEVDIR)/lib
+manager_build:
+	cd manager; $(DOCKER) build . -t $(DARING_CYCLOPS_MANAGER)
 
-#
-# Header Files.
-#
-
-#
-# Libraries.
-#
-LIBRARY = library/libcyclops.a
-
-#
-# Configurations.
-#
-ARFLAGS = -r
-CMACS  = -DTRACE=1
-CFLAGS = -g -Wall -I$(INCDIR)
-DEPEND_FLAG = -MM
-CPPFLAGS = -g -Wall -I$(INCDIR) 
-
-#
-# Tools.
-#
-AR = ar
-CC = g++
-INDENT = indent
-LATEX = latex
-
-#
-# Executable Names.
-#
-MANAGER = cyclops_manager
-WORKER = cyclops_worker
-
-#
-# Finally, some work...
-#
-all: $(LIBRARY) $(WORKER) $(MANAGER)
-
-#include depend.include
-
-#$(TEST1): test1.o $(PROJ1LIB) $(PROJ2LIB)
-#	$(CC) -o $@ test1.o $(PROJ1LIB) $(PROJ2LIB)
-
-$(LIBRARY):
-	$(MAKE) -C library $@
-
-#
-#  Update the TAGS file.
-#
-.PHONY: tags
-tags:
-	-@etags *.cc
-
-#
-#  Determine the size of source files in this subdirectory.
-#
-.PHONY: size
-size:
-	-@echo "Size: `pwd`"
-	-@wc -l *.cc makefile
-
-#
-#  Generate dependency file
-#
-.PHONY: depend
-depend:
-	-@rm ./depend.include
-	$(CC) $(DEPEND_FLAG) $(CPPFLAGS) *.cc > ./depend.include
+worker_build:
+	cd worker; $(DOCKER) build . -t $(DARING_CYCLOPS_WORKER)
 
 #
 #  Cleanup this subdirectory.
