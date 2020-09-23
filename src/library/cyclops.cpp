@@ -43,9 +43,11 @@ void Cyclops::game_play() {
 
     std::cout << "game play" << std::endl;
     std::cout << "command:";
-    std::cin >> buffer;
+//   std::cin >> buffer;
 //    std::cout << std::endl;
-    std::cout << buffer << std::endl;
+//    std::cout << buffer << std::endl;
+
+    PlayerManager *player_manager = PlayerManager::get_instance();
 }
 
 ////////// kill below

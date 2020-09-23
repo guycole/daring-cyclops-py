@@ -15,10 +15,64 @@
 
 #include <iostream>
 
-PlayerManager::PlayerManager() {
-    std::cout << "player manager\n";
+PlayerManager *PlayerManager::instance = 0;
+
+PlayerManager *PlayerManager::get_instance() {
+    if (instance == 0) {
+        instance = new PlayerManager();
+    }
+
+    return instance;
 }
 
+PlayerManager::PlayerManager() {
+    Player *player = new Player();
+    player->set_id("");
+    player->set_name("");
+    player->set_inactive();
+    player->set_rank(PlayerRank::kCadet);
+    player->set_team(PlayerTeam::kNeutral);
+
+    for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
+        blue_team[ndx] = player;
+        red_team[ndx] = player;
+    }
+}
+
+int PlayerManager::add_player(const std::string& id, const std::string& name, PlayerRank rank, PlayerTeam team) {
+    Player *player = new Player();
+    player->set_id(id);
+    player->set_name(name);
+    player->set_active();
+    player->set_rank(rank);
+    player->set_team(team);
+
+    for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
+        if (team == PlayerTeam::kBlue) {
+            if (!blue_team[ndx]->is_active()) {
+                blue_team[ndx] = player;
+                return ERROR_NONE;
+            }
+        } else {
+            if (!red_team[ndx]->is_active()) {
+                red_team[ndx] = player;
+                return ERROR_NONE;
+            }
+        }
+    }
+
+    return ERROR_USER_TABLE_FULL;
+}
+
+int PlayerManager::remove_player(const std::string& id) {
+    return ERROR_NONE;
+}
+
+int PlayerManager::get_player(const std::string& id) {
+    return ERROR_NONE;
+}
+
+#if 0
 int PlayerManager::add_new_player(Player candidate) {
     for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
         if (candidate.get_team() == PlayerTeam::kBlue) {
@@ -36,10 +90,10 @@ int PlayerManager::add_new_player(Player candidate) {
 
     return ERROR_USER_TABLE_FULL;
 }
-
-int PlayerManager::remove_player(Player candidate) {
+#endif
 
 #if 0
+int PlayerManager::remove_player(Player candidate) {
     int result = get_player(candidate.get_id());
     if (result == ERROR_NONE) {
     }
@@ -61,13 +115,13 @@ int PlayerManager::remove_player(Player candidate) {
             }
         }
     }
-#endif
 
     return ERROR_USER_TABLE_NOT_FOUND;
 }
+#endif
 
-int get_player(const std::string& id) {
 #if 0
+int get_player(const std::string& id) {
     for (int ndx = 0; ndx < MAX_PLAYER_PER_SIDE; ndx++) {
         if (candidate.get_team() == PlayerTeam::kBlue) {
             if (blue_team[ndx].is_active()) {
@@ -85,6 +139,6 @@ int get_player(const std::string& id) {
             }
         }
     }
-#endif
     return ERROR_USER_TABLE_NOT_FOUND;
 }
+#endif

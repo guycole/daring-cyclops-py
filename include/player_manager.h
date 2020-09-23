@@ -20,15 +20,19 @@
 #define PLAYER_MANAGER_H_
 
 class PlayerManager {
-    Player blue_team[MAX_PLAYER_PER_SIDE];
-    Player red_team[MAX_PLAYER_PER_SIDE];
+    PlayerManager();
+    ~PlayerManager() {}
+
+    static PlayerManager *instance;
+
+    Player *blue_team[MAX_PLAYER_PER_SIDE];
+    Player *red_team[MAX_PLAYER_PER_SIDE];
 
     public:
-        PlayerManager();
+        static PlayerManager *get_instance();
 
-        int add_new_player(Player candidate);
-        int remove_player(Player candidate);
-
+        int add_player(const std::string& id, const std::string& name, PlayerRank rank, PlayerTeam team);
+        int remove_player(const std::string& id);
         int get_player(const std::string& id);
 };
 

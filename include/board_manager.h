@@ -38,7 +38,7 @@ class BoardManager {
     void initialize_cells();
 
 //
-    Utility utility;
+//    Utility utility;
 
     /////
 

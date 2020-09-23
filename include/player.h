@@ -19,12 +19,14 @@
 #define PLAYER_H_
 
 class Player {
-    bool active;
+    bool active = false;
     std::string id; // UUID
+    std::string name;
+    PlayerRank rank = PlayerRank::kCadet;
     PlayerTeam team = PlayerTeam::kNeutral;
 
     public:
-        Player();
+        Player() {}
 
         bool is_active() {return active;}
         void set_active() {active = true;}
@@ -33,12 +35,14 @@ class Player {
         std::string get_id() {return id;}
         void set_id(std::string arg) {id = arg;}
 
+        std::string get_name() {return name;}
+        void set_name(std::string arg) {name = arg;}
+
+        PlayerRank get_rank() {return rank;}
+        void set_rank(PlayerRank arg) {rank = arg;}
+
         PlayerTeam get_team() {return team;}
         void set_team(PlayerTeam arg) {team = arg;}
-
-        void fresh_player(std::string id, PlayerTeam team);
-
-        void dump_player();
 };
 
 #endif
