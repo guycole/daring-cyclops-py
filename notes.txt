@@ -6,3 +6,35 @@ rabbitmq
 
 UI = django
 
+postgres
+
+prometheus
+
+manager = django and postgresql
+messenger = rabbitmq
+monitor = prometheus
+worker = c++
+
+#
+develop with minikube
+
+#
+docker build . -t daring-cyclops-dev
+#
+docker build -f dockerfile.dev . -t daring-cyclops-dev
+#
+docker run --rm -it -v ~/IdeaProjects/daring-cyclops:/home/gsc/daring-cyclops daring-cyclops-dev /bin/bash
+#
+docker run --rm -it daring-cyclops-dev /bin/bash
+#
+docker run -p 8088:80 --rm -it daring-cyclops-manager /bin/bash
+#
+docker run --name daring_database -e POSTGRES_PASSWORD=daring_password -d -p 5432:5432 postgres:9.6.16
+docker run --name daring_database -e POSTGRES_DB=daring_db -e POSTGRES_USER=daring_role -e POSTGRES_PASSWORD=daring_password -d -p 5432:5432 postgres:9.6.16
+#
+psql -h localhost -p 5432 -U postgres
+#
+python manage.py migrate
+python manage.py makemigrations cyclops
+#
+python manage.py createsuperuser
