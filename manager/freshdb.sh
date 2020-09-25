@@ -6,7 +6,7 @@
 #
 # Development Environment: OS X 10.13.6, Python 3.7.2, Django  2.2.1
 #
-# Author: Guy Cole (guy at shastrax.com dot com)
+# Author: Guy Cole (guycole at gmail dot com)
 #
 PATH=/bin:/usr/bin:/etc:/usr/local/bin; export PATH
 #

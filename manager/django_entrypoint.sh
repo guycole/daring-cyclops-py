@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-cd /home/django
+cd /home/django/daring_django
 #python3 manage.py makemigrations
 #python3 manage.py migrate
 #
@@ -13,11 +13,11 @@ touch /var/log/gunicorn/access.log
 #
 echo starting gunicorn
 #
-exec gunicorn jaded.wsgi:application \
-    --name jaded \
+exec gunicorn daring_django.wsgi:application \
+    --name daring \
     --bind unix:gunicorn.sock \
     --workers 3 \
-    --statsd-host=jaded_django_graphite_1:8125 \
+    --statsd-host=daring_cyclops_graphite_1:8125 \
     --log-level=info \
     --log-file=/var/log/gunicorn/gunicorn.log \
     --access-logfile=/var/log/gunicorn/access.log &

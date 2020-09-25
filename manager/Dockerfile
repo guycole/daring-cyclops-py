@@ -11,7 +11,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 #
 RUN apt-get update && apt-get -y upgrade
-RUN apt-get install -y python3 
+RUN apt-get install -y python3
 RUN apt-get install -y python3-pip 
 RUN apt-get install -y virtualenv
 RUN apt-get install -y vim
@@ -29,5 +29,5 @@ RUN ln -s /etc/nginx/sites-available/django_nginx.conf /etc/nginx/sites-enabled/
 #
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 #
-#ENTRYPOINT ["./django_entrypoint.sh"]
+ENTRYPOINT ["./django_entrypoint.sh"]
 #

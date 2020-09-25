@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: manager-deployment
+  labels:
+    app: manager-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: manager-deployment
+  template:
+    metadata:
+      labels:
+        app: manager-deployment
+    spec:
+      containers:
+        - name: manager-deployment
+          image: daring-cyclops-manager:latest
+          ports:
+            - containerPort: 80
+          imagePullPolicy: Never

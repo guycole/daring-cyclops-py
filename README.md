@@ -20,3 +20,5 @@ docker run --rm -it -v ~/IdeaProjects/daring-cyclops:/home/gsc/daring-cyclops da
 #
 docker run --rm -it daring-cyclops-dev /bin/bash
 #
+docker run -p 8088:80 --rm -it daring-cyclops-manager /bin/bash
+#

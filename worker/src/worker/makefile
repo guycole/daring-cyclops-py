@@ -19,7 +19,7 @@
 #
 # Directories.
 #
-BASEDIR = $(HOME)/daring-cyclops
+BASEDIR = $(HOME)/daring-cyclops/worker
 BINDIR = $(BASEDIR)/bin
 INCDIR = $(BASEDIR)/include
 LIBDIR = $(BASEDIR)/lib

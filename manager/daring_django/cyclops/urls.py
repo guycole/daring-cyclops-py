@@ -1,14 +1,16 @@
 #
-# Title:views.py
+# Title:urls.py
 # Description:
 # Development Environment:OS X 10.13.6/Python 3.7.2/Django 3.1.1
 # Author:Guy Cole (gsc at gmail dot com)
 #
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import path
 
-def index(request):
-    return HttpResponse("ryryryry")
+from . import views
+
+urlpatterns = [
+    path('', views.index, name='index')
+]
 
 # ;;; Local Variables: ***
 # ;;; mode:python ***
