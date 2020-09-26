@@ -1,0 +1,14 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: pg-pervol-claim
+  labels:
+    type: local
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 2Gi
+  volumeName: pg-pervol

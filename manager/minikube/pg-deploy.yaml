@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pg-deployment
+  labels:
+    app: pg-container
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pg-container
+  template:
+    metadata:
+      labels:
+        app: pg-container
+        tier: backend
+    spec:
+      containers:
+        - name: pg-container
+          image: postgres:9.6.16
+          env:
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: pg-credential
+                  key: user
+
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pg-credential
+                  key: password
+
+            - name: POSTGRES_DB
+              value: cyclops_db
+
+          ports:
+            - containerPort: 5432
+          volumeMounts:
+            - name: pg-volume-mount
+              mountPath: /var/lib/postgresql/data
+
+      volumes:
+        - name: pg-volume-mount
+          persistentVolumeClaim:
+            claimName: pg-pervol-claim

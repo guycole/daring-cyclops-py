@@ -4,7 +4,7 @@
 # Development Environment:OS X 10.13.6/Python 3.7.2/Django 3.1.1
 # Author:Guy Cole (gsc at gmail dot com)
 #
-"""daring_django URL Configuration
+"""daring URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/

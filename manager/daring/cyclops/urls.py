@@ -8,8 +8,11 @@ from django.urls import path
 
 from . import views
 
+app_name = 'cyclops'
+
 urlpatterns = [
-    path('', views.index, name='index')
+    path('', views.index, name='index'),
+    path('driver', views.driver, name='driver')
 ]
 
 # ;;; Local Variables: ***

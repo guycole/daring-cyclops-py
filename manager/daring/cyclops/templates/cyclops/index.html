@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    {% block title %}<title>Daring Cyclops</title>{% endblock %}
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body style="background:#373f28; color: red; margin:10px;">
+{% load static %}
+
+  <div class="container-fluid">
+      <form action="{% url 'cyclops:driver' %}" method="post">
+          {% csrf_token %}
+          <input type="submit" value="Vote">
+      </form>
+  </div>
+
+
+
+</body>

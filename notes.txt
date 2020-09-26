@@ -38,3 +38,6 @@ python manage.py migrate
 python manage.py makemigrations cyclops
 #
 python manage.py createsuperuser
+
+echo -n "<string>" | base64
+

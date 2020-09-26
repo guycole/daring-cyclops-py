@@ -5,10 +5,15 @@
 # Author:Guy Cole (gsc at gmail dot com)
 #
 from django.shortcuts import render
+from django.template import loader
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("ryryryry")
+    context = {}
+    return render(request, 'cyclops/index.html', context)
+
+def driver(request):
+    return HttpResponse("driver driver")
 
 # ;;; Local Variables: ***
 # ;;; mode:python ***
