@@ -41,26 +41,26 @@ RUN mkdir /home/gsc/daring-cyclops
 RUN chown gsc:gsc /home/gsc/daring-cyclops
 #
 # protobuff
-WORKDIR /home/gsc
-RUN curl -L https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-cpp-3.13.0.tar.gz -o protobuf-cpp-3.13.0.tar.gz
-RUN su - gsc -c "tar -xzf protobuf-cpp-3.13.0.tar.gz"
-RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;./configure"
-RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;make;make check"
-WORKDIR /home/gsc/protobuf-3.13.0
-RUN make install
-RUN ldconfig
+#WORKDIR /home/gsc
+#RUN curl -L https://github.com/protocolbuffers/protobuf/releases/download/v3.13.0/protobuf-cpp-3.13.0.tar.gz -o protobuf-cpp-3.13.0.tar.gz
+#RUN su - gsc -c "tar -xzf protobuf-cpp-3.13.0.tar.gz"
+#RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;./configure"
+#RUN su - gsc -c "cd /home/gsc/protobuf-3.13.0;make;make check"
+#WORKDIR /home/gsc/protobuf-3.13.0
+#RUN make install
+#RUN ldconfig
 #
 # cmake
-WORKDIR /home/gsc
-RUN su - gsc -c "wget -q -O cmake-linux.sh https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0-Linux-x86_64.sh"
-RUN sh cmake-linux.sh -- --skip-license --prefix=/usr/local
+#WORKDIR /home/gsc
+#RUN su - gsc -c "wget -q -O cmake-linux.sh https://github.com/Kitware/CMake/releases/download/v3.17.0/cmake-3.17.0-Linux-x86_64.sh"
+#RUN sh cmake-linux.sh -- --skip-license --prefix=/usr/local
 #
 # grpc
-WORKDIR /home/gsc
-RUN su - gsc -c "git clone --recurse-submodules -b v1.31.0 https://github.com/grpc/grpc"
-RUN su - gsc -c "mkdir -p /home/gsc/grpc/cmake/build"
-RUN su - gsc -c "cd /home/gsc/grpc/cmake/build;cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR ../.."
-RUN su - gsc -c "cd /home/gsc/grpc/cmake/build;make"
-WORKDIR /home/gsc/grpc/cmake/build
-RUN make install
+#WORKDIR /home/gsc
+#RUN su - gsc -c "git clone --recurse-submodules -b v1.31.0 https://github.com/grpc/grpc"
+#RUN su - gsc -c "mkdir -p /home/gsc/grpc/cmake/build"
+#RUN su - gsc -c "cd /home/gsc/grpc/cmake/build;cmake -DgRPC_INSTALL=ON -DgRPC_BUILD_TESTS=OFF -DCMAKE_INSTALL_PREFIX=$MY_INSTALL_DIR ../.."
+#RUN su - gsc -c "cd /home/gsc/grpc/cmake/build;make"
+#WORKDIR /home/gsc/grpc/cmake/build
+#RUN make install
 #

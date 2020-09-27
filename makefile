@@ -16,9 +16,16 @@
 DOCKER = docker
 DARING_CYCLOPS_MANAGER = daring-cyclops-manager
 DARING_CYCLOPS_WORKER = daring-cyclops-worker
+KUBECTL = kubectl
 
 manager_build:
 	cd manager; $(DOCKER) build . -t $(DARING_CYCLOPS_MANAGER)
+
+manager_deploy:
+	cd manager; $(KUBECTL) apply -f pg-cred.yaml
+	cd manager; $(KUBECTL) apply -f pg-volume.yaml
+	cd manager; $(KUBECTL) apply -f pg-claim.yaml
+	cd manager; $(KUBECTL) apply -f pg-deploy.yaml
 
 worker_build:
 	cd worker; $(DOCKER) build . -t $(DARING_CYCLOPS_WORKER)
