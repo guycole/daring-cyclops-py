@@ -29,6 +29,10 @@ manager_deploy:
 	cd manager; $(KUBECTL) apply -f pg-service.yaml
 	cd manager; $(KUBECTL) apply -f django-deploy.yaml
 	cd manager; $(KUBECTL) apply -f django-service.yaml
+	cd manager; $(KUBECTL) apply -f monitor-namespace.yaml
+	cd manager; $(KUBECTL) apply -f prom-config.yaml
+	cd manager; $(KUBECTL) apply -f prom-deploy.yaml
+	cd manager; $(KUBECTL) apply -f prom-service.yaml
 
 worker_build:
 	cd worker; $(DOCKER) build . -t $(DARING_CYCLOPS_WORKER)
