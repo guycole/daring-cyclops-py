@@ -15,6 +15,7 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -84,12 +85,14 @@ DATABASES = {
     'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
+########
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "cyclops_db",
 #        "USER": "daring_role",
 #        "PASSWORD": "daring_password",
 #        "HOST": "localhost",
 #        "PORT": "5432",
+########
         'USER': os.getenv('POSTGRES_USER'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
         'HOST': os.getenv('POSTGRES_HOST'),

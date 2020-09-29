@@ -26,6 +26,9 @@ manager_deploy:
 	cd manager; $(KUBECTL) apply -f pg-volume.yaml
 	cd manager; $(KUBECTL) apply -f pg-claim.yaml
 	cd manager; $(KUBECTL) apply -f pg-deploy.yaml
+	cd manager; $(KUBECTL) apply -f pg-service.yaml
+	cd manager; $(KUBECTL) apply -f django-deploy.yaml
+	cd manager; $(KUBECTL) apply -f django-service.yaml
 
 worker_build:
 	cd worker; $(DOCKER) build . -t $(DARING_CYCLOPS_WORKER)

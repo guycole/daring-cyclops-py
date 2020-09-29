@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-cd /home/django/daring_django
+cd /home/django/daring
 #python3 manage.py makemigrations
 #python3 manage.py migrate
 #
@@ -13,7 +13,7 @@ touch /var/log/gunicorn/access.log
 #
 echo starting gunicorn
 #
-exec gunicorn daring_django.wsgi:application \
+exec gunicorn daring.wsgi:application \
     --name daring \
     --bind unix:gunicorn.sock \
     --workers 3 \
