@@ -33,6 +33,9 @@ manager_deploy:
 	cd manager; $(KUBECTL) apply -f prom-config.yaml
 	cd manager; $(KUBECTL) apply -f prom-deploy.yaml
 	cd manager; $(KUBECTL) apply -f prom-service.yaml
+	cd manager; $(KUBECTL) apply -f grafana-deploy.yaml
+	cd manager; $(KUBECTL) apply -f grafana-service.yaml
+	cd manager; $(KUBECTL) apply -f node-exporter-daemonset.yaml
 
 worker_build:
 	cd worker; $(DOCKER) build . -t $(DARING_CYCLOPS_WORKER)
