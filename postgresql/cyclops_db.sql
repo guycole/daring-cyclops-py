@@ -1,0 +1,3 @@
+CREATE USER cyclops WITH PASSWORD 'wootwoot';
+CREATE DATABASE cyclops_db;
+GRANT ALL PRIVILEGES ON DATABASE cyclops_db TO cyclops;

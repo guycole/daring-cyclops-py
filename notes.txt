@@ -29,11 +29,13 @@ docker run --rm -it daring-cyclops-dev /bin/bash
 #
 docker run -p 8088:80 --rm -it daring-cyclops-manager /bin/bash
 #
-docker run --name daring_database -e POSTGRES_PASSWORD=daring_password -d -p 5432:5432 postgres:9.6.16
-docker run --name daring_database -e POSTGRES_DB=daring_db -e POSTGRES_USER=daring_role -e POSTGRES_PASSWORD=daring_password -d -p 5432:5432 postgres:9.6.16
+# works
+docker run --rm --name cyclops_db -e POSTGRES_PASSWORD=woot -v /Users/gsc/cyclops_db:/var/lib/postgresql/data -d -p 5432:5432 postgres:9.6.19
+docker run --rm --name cyclops_db -e POSTGRES_PASSWORD=woot -v /Users/gsc/IdeaProjects/daring-cyclops/postgresql:/docker-entrypoint-initdb.d -v /Users/gsc/cyclops_db:/var/lib/postgresql/data -d -p 5432:5432 postgres:9.6.19
 #
 psql -h localhost -p 5432 -U postgres
-#
+psql -h localhost -p 5432 -U cyclops -d cyclops_db
+
 python manage.py migrate
 python manage.py makemigrations cyclops
 #
