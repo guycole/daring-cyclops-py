@@ -88,16 +88,16 @@ DATABASES = {
 ########
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "cyclops_db",
-        "USER": "cyclops",
-        "PASSWORD": "wootwoot",
-        "HOST": "localhost",
-        "PORT": "5432",
+#        "USER": "cyclops",
+#        "PASSWORD": "wootwoot",
+#        "HOST": "localhost",
+#        "PORT": "5432",
 #
 ########
-#        'USER': os.getenv('POSTGRES_USER'),
-#        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-#        'HOST': os.getenv('POSTGRES_HOST'),
-#        'PORT': os.getenv('POSTGRES_PORT', 5432)
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_PORT', 5432)
     }
 }
 

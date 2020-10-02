@@ -1,8 +1,9 @@
-kind: Service
 apiVersion: v1
+kind: Service
 metadata:
   name: pg-service
 spec:
+  type: NodePort
   selector:
     app: pg-container
   ports:

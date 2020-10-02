@@ -43,4 +43,4 @@ spec:
       volumes:
         - name: pg-volume-mount
           persistentVolumeClaim:
-            claimName: pg-pervol-claim
+            claimName: pg-volume-claim

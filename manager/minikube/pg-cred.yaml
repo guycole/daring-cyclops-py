@@ -4,5 +4,5 @@ metadata:
   name: pg-credential
 type: Opaque
 data:
-  user: ZGFyaW5nX3JvbGU=
-  password: ZGFyaW5nX3Bhc3N3b3Jk
+  user: Y3ljbG9wcw==
+  password: d29vdHdvb3Q=
