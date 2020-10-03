@@ -6,10 +6,9 @@ metadata:
     app: postgres
     type: local
 spec:
-  storageClassName: standard
+  storageClassName: manual
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
       storage: 2Gi
-  volumeName: pg-volume
