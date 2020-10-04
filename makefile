@@ -25,9 +25,7 @@ manager_deploy:
 	cd manager; $(KUBECTL) apply -f pg-cred.yaml
 	cd manager; $(KUBECTL) apply -f pg-volume.yaml
 	cd manager; $(KUBECTL) apply -f pg-claim.yaml
-	cd manager; $(KUBECTL) apply -f pg-deploy.yaml
-	cd manager; $(KUBECTL) apply -f pg-service.yaml
-	cd manager; $(KUBECTL) apply -f django-deploy.yaml
+	cd manager; $(KUBECTL) apply -f pg-pod.yaml
 	cd manager; $(KUBECTL) apply -f django-service.yaml
 	cd manager; $(KUBECTL) apply -f monitor-namespace.yaml
 	cd manager; $(KUBECTL) apply -f prom-config.yaml

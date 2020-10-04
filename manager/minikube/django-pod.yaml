@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: django-pod
+spec:
+  containers:
+    - name: django-container
+      image: daring-cyclops-django:latest
+      ports:
+        - containerPort: 80
+      env:
+        - name: POSTGRES_USER
+          valueFrom:
+            secretKeyRef:
+              name: pg-credential
+              key: user
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: pg-credential
+              key: password
+        - name: POSTGRESS_HOST
+          value: pg-service
+      imagePullPolicy: Never
