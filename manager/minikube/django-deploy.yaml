@@ -2,8 +2,6 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: django-deployment
-  labels:
-    app: django-deployment
 spec:
   replicas: 1
   selector:
@@ -15,8 +13,8 @@ spec:
         pod: django
     spec:
       containers:
-        - name: django
-          image: daring-cyclops-manager:latest
+        - name: django-deployment
+          image: daring-cyclops-django:latest
           ports:
             - containerPort: 80
           env:
