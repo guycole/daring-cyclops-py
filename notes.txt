@@ -45,3 +45,12 @@ python manage.py createsuperuser
 
 echo -n "<string>" | base64
 
+monitoring needs to use prometheus and grafana
+https://marselester.com/django-prometheus-via-statsd.html
+https://www.apsl.net/blog/2018/10/01/using-prometheus-monitoring-django-applications-kubernetes/
+https://medium.com/@damianmyerscough/monitoring-gunicorn-with-prometheus-789954150069
+
+django->statsd_exporter->prometheus
+gunicorn->prometheus
+nginx->prometheus
+minikube->prometheus
