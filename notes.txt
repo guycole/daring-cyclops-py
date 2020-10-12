@@ -54,3 +54,5 @@ django->statsd_exporter->prometheus
 gunicorn->prometheus
 nginx->prometheus
 minikube->prometheus
+
+update test
