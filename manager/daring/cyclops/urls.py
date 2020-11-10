@@ -12,7 +12,9 @@ app_name = 'cyclops'
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('driver', views.driver, name='driver')
+    path('driver', views.driver, name='driver'),
+    path('game_end', views.game_end, name='game_end'),
+    path('game_start', views.game_start, name='game_start')
 ]
 
 # ;;; Local Variables: ***

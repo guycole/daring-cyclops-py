@@ -15,6 +15,12 @@ def index(request):
 def driver(request):
     return HttpResponse("driver driver")
 
+def game_end(request):
+    return HttpResponse("game end")
+
+def game_start(request):
+    return HttpResponse("game start")
+
 # ;;; Local Variables: ***
 # ;;; mode:python ***
 # ;;; End: ***

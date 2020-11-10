@@ -1,6 +1,6 @@
 #
 # Title:settings.py
-# Description:
+# Description: settings for daring_django project
 # Development Environment:OS X 10.13.6/Python 3.7.2/Django 3.1.1
 # Author:Guy Cole (gsc at gmail dot com)
 #
@@ -16,6 +16,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
+import logging
 
 from pathlib import Path
 
@@ -83,21 +84,21 @@ WSGI_APPLICATION = 'daring.wsgi.application'
 
 DATABASES = {
     'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
 ########
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-        "NAME": "cyclops_db",
+#        "ENGINE": "django.db.backends.postgresql_psycopg2",
+#        "NAME": "cyclops_db",
 #        "USER": "cyclops",
 #        "PASSWORD": "wootwoot",
 #        "HOST": "localhost",
 #        "PORT": "5432",
 #
 ########
-        'USER': os.getenv('POSTGRES_USER'),
-        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
-        'HOST': os.getenv('POSTGRES_HOST'),
-        'PORT': os.getenv('POSTGRES_PORT', 5432)
+#        'USER': os.getenv('POSTGRES_USER'),
+#        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+#        'HOST': os.getenv('POSTGRES_HOST'),
+#        'PORT': os.getenv('POSTGRES_PORT', 5432)
     }
 }
 
@@ -139,6 +140,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+logger = logging.getLogger(__name__)
+logger.warning("logger warning")
+
+if os.getenv("DJANGO_ENV") == 'PROD':
+    logger.warning('prod noted')
+else:
+    logger.warning('prod not')
+
+if os.getenv("DJANGO_DOCKER") == "TRUE":
+    logger.warning("docker noted")
+
+    try:
+        resp = requests.get('http://169.254.170.2/v2/metadata')
+        data = resp.json()
+        print(data)
+    except:
+        # silently fail as we may not be in an ECS environment
+        pass
+
+else:
+    logger.warning("docker not")
 
 # ;;; Local Variables: ***
 # ;;; mode:python ***
